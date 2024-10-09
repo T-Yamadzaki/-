@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Учебная программа по JavaScript - Урок 5</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #2196F3;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        h1, h2, h3 {
+            margin: 0;
+            padding: 0;
+        }
+        .content {
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h2 {
+            color: #2196F3;
+            border-bottom: 2px solid #2196F3;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+        p {
+            line-height: 1.6;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            color: #e83e8c;
+        }
+        ul {
+            margin-left: 20px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            margin-top: 20px;
+        }
+        .callout {
+            background-color: #e7f7ff;
+            border-left: 4px solid #2196F3;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+        .important {
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Учебная программа по JavaScript</h1>
+    </header>
+
+    <div class="content">
+        <h2>Урок 5: Функции</h2>
+
+        <!-- Введение -->
+        <div class="section">
+            <h3>Введение</h3>
+            <p><strong>Преподаватель:</strong> На прошлом уроке мы изучали циклы. Сегодня мы поговорим о функциях. Функции позволяют организовать код в удобные и переиспользуемые блоки, что улучшает его структуру и читаемость.</p>
+            <p>В конце урока вы сможете создавать функции и использовать параметры и возвращаемые значения.</p>
+        </div>
+
+        <!-- Теоретическая часть -->
+        <div class="section">
+            <h3>Теоретическая часть</h3>
+            <p><strong>Преподаватель:</strong> Функции в JavaScript — это набор инструкций, которые выполняются при их вызове. Основные моменты:</p>
+            <ul>
+                <li>Функции могут принимать параметры и возвращать значения.</li>
+                <li>Функции могут быть объявлены с помощью ключевого слова <code>function</code>.</li>
+                <li>В JavaScript функции являются объектами и могут быть присвоены переменным, переданы как аргументы и возвращены из других функций.</li>
+            </ul>
+            <p>В отличие от C++, в JavaScript вы не обязаны объявлять типы возвращаемых значений, так как язык динамически типизирован. В Python функции также могут возвращать значения, но синтаксис отличается.</p>
+        </div>
+
+        <!-- Пример кода -->
+        <div class="section">
+            <h3>Пример кода</h3>
+            <p><strong>Преподаватель:</strong> Давайте рассмотрим простой пример функции, которая принимает два числа и возвращает их сумму:</p>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ru"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Функции в JavaScript&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;script&gt;
+        function сложить(a, b) {
+            return a + b;
+        }
+
+        console.log(сложить(3, 5)); // Выводит 8
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <p>В этом коде мы определяем функцию <code>сложить</code>, которая принимает два параметра и возвращает их сумму.</p>
+        </div>
+
+        <!-- Практическая часть -->
+        <div class="section">
+            <h3>Практическая часть</h3>
+            <p><strong>Преподаватель:</strong> Теперь давайте создадим свой HTML-файл с функциями. Вот ваши шаги:</p>
+            <ul>
+                <li>Создайте файл <code>lesson5.html</code>.</li>
+                <li>Вставьте в него пример кода, который мы только что рассмотрели.</li>
+                <li>Измените функцию так, чтобы она принимала три числа и возвращала их произведение.</li>
+            </ul>
+        </div>
+
+        <!-- Закрепление материала -->
+        <div class="section">
+            <h3>Закрепление материала</h3>
+            <p><strong>Преподаватель:</strong> Давайте обсудим несколько вопросов:</p>
+            <ul>
+                <li>Что такое функция в JavaScript?</li>
+                <li>Как объявить функцию?</li>
+                <li>В чём разница между функциями в JavaScript и C++?</li>
+                <li>Как функции в JavaScript сравниваются с Python?</li>
+            </ul>
+        </div>
+
+        <!-- Домашнее задание -->
+        <div class="section">
+            <h3>Домашнее задание</h3>
+            <p>1. Создайте функцию, которая принимает массив чисел и возвращает их среднее значение.</p>
+            <pre><code>function среднее(числа) {
+    let сумма = 0;
+    for (let i = 0; i &lt; числа.length; i++) {
+        сумма += числа[i];
+    }
+    return сумма / числа.length;
+}</code></pre>
+            <p>2. Напишите функцию, которая принимает строку и возвращает её в обратном порядке.</p>
+            <pre><code>function обратнаяСтрока(str) {
+    return str.split('').reverse().join('');
+}</code></pre>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Учебная программа по JavaScript</p>
+    </footer>
+</body>
+</html>

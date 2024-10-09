@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Учебная программа по JavaScript - Урок 6</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #2196F3;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        h1, h2, h3 {
+            margin: 0;
+            padding: 0;
+        }
+        .content {
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h2 {
+            color: #2196F3;
+            border-bottom: 2px solid #2196F3;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+        p {
+            line-height: 1.6;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            color: #e83e8c;
+        }
+        ul {
+            margin-left: 20px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            margin-top: 20px;
+        }
+        .callout {
+            background-color: #e7f7ff;
+            border-left: 4px solid #2196F3;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+        .important {
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Учебная программа по JavaScript</h1>
+    </header>
+
+    <div class="content">
+        <h2>Урок 6: Объекты и массивы</h2>
+
+        <!-- Введение -->
+        <div class="section">
+            <h3>Введение</h3>
+            <p><strong>Преподаватель:</strong> На прошлом уроке мы изучали функции. Сегодня мы поговорим об объектах и массивах. Эти структуры данных позволяют хранить и организовывать данные в JavaScript, что является основой для работы с более сложными приложениями.</p>
+            <p>В конце урока вы сможете создавать и манипулировать объектами и массивами.</p>
+        </div>
+
+        <!-- Теоретическая часть -->
+        <div class="section">
+            <h3>Теоретическая часть</h3>
+            <p><strong>Преподаватель:</strong> Объекты в JavaScript — это коллекции пар "ключ-значение". Они позволяют организовывать данные в более сложные структуры. Массивы, с другой стороны, — это упорядоченные коллекции значений. Основные моменты:</p>
+            <ul>
+                <li>Объекты создаются с помощью фигурных скобок <code>{}</code>.</li>
+                <li>Массивы создаются с помощью квадратных скобок <code>[]</code>.</li>
+                <li>Элементы массива имеют числовые индексы, а свойства объекта — строковые ключи.</li>
+            </ul>
+            <p>Интересный момент: в отличие от C++, где массивы имеют фиксированный размер, в JavaScript массивы могут динамически изменяться. Python также имеет динамические списки, что делает работу с данными более гибкой.</p>
+        </div>
+
+        <!-- Пример кода -->
+        <div class="section">
+            <h3>Пример кода</h3>
+            <p><strong>Преподаватель:</strong> Давайте рассмотрим пример создания объекта и массива:</p>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ru"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Объекты и массивы в JavaScript&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;script&gt;
+        // Создание объекта
+        let человек = {
+            имя: 'Иван',
+            возраст: 25,
+            профессия: 'разработчик'
+        };
+
+        console.log(человек.имя); // Выводит "Иван"
+
+        // Создание массива
+        let числа = [1, 2, 3, 4, 5];
+        console.log(числа[0]); // Выводит 1
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <p>В этом коде мы создаём объект <code>человек</code> с тремя свойствами и массив <code>числа</code> с пятью элементами.</p>
+        </div>
+
+        <!-- Практическая часть -->
+        <div class="section">
+            <h3>Практическая часть</h3>
+            <p><strong>Преподаватель:</strong> Теперь давайте создадим свой HTML-файл с объектами и массивами. Вот ваши шаги:</p>
+            <ul>
+                <li>Создайте файл <code>lesson6.html</code>.</li>
+                <li>Вставьте в него пример кода, который мы только что рассмотрели.</li>
+                <li>Добавьте в массив три своих любимых числа и выведите их на экран с помощью цикла <code>for</code>.</li>
+            </ul>
+        </div>
+
+        <!-- Закрепление материала -->
+        <div class="section">
+            <h3>Закрепление материала</h3>
+            <p><strong>Преподаватель:</strong> Давайте обсудим несколько вопросов:</p>
+            <ul>
+                <li>Что такое объект в JavaScript?</li>
+                <li>Как создать массив?</li>
+                <li>В чём разница между объектами и массивами?</li>
+                <li>Как объекты в JavaScript сравниваются с C++ и Python?</li>
+            </ul>
+        </div>
+
+        <!-- Домашнее задание -->
+        <div class="section">
+            <h3>Домашнее задание</h3>
+            <p>1. Создайте объект, который описывает вашу любимую книгу (название, автор, год издания).</p>
+            <pre><code>let книга = {
+    название: '1984',
+    автор: 'Джордж Оруэлл',
+    год: 1949
+};</code></pre>
+            <p>2. Напишите массив, содержащий имена ваших друзей, и выведите их на экран с помощью метода <code>forEach</code>.</p>
+            <pre><code>let друзья = ['Аня', 'Саша', 'Петя'];
+друзья.forEach(друг =&gt; console.log(друг));</code></pre>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Учебная программа по JavaScript</p>
+    </footer>
+</body>
+</html>

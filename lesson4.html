@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Учебная программа по JavaScript - Урок 4</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #2196F3;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        h1, h2, h3 {
+            margin: 0;
+            padding: 0;
+        }
+        .content {
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h2 {
+            color: #2196F3;
+            border-bottom: 2px solid #2196F3;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+        p {
+            line-height: 1.6;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            color: #e83e8c;
+        }
+        ul {
+            margin-left: 20px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            margin-top: 20px;
+        }
+        .callout {
+            background-color: #e7f7ff;
+            border-left: 4px solid #2196F3;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+        .important {
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Учебная программа по JavaScript</h1>
+    </header>
+
+    <div class="content">
+        <h2>Урок 4: Условные операторы</h2>
+
+        <!-- Введение -->
+        <div class="section">
+            <h3>Введение</h3>
+            <p><strong>Преподаватель:</strong> На предыдущем уроке мы изучали переменные и типы данных. Сегодня мы поговорим об условных операторах. Условные операторы позволяют выполнять различные действия в зависимости от условий. Это основа для создания логики в вашем коде.</p>
+            <p>В конце урока вы научитесь использовать условные операторы <code>if</code>, <code>else</code> и <code>switch</code>.</p>
+        </div>
+
+        <!-- Теоретическая часть -->
+        <div class="section">
+            <h3>Теоретическая часть</h3>
+            <p><strong>Преподаватель:</strong> Условные операторы проверяют, выполняется ли определённое условие, и в зависимости от этого выполняют определённый код. Давайте рассмотрим основные виды условных операторов в JavaScript:</p>
+            <ul>
+                <li><code>if</code> — выполняет код, если условие истинно.</li>
+                <li><code>else</code> — выполняет код, если предыдущее условие ложно.</li>
+                <li><code>else if</code> — проверяет дополнительное условие, если предыдущее условие ложно.</li>
+                <li><code>switch</code> — выполняет код в зависимости от значения выражения.</li>
+            </ul>
+
+            <p>Важно отметить, что в JavaScript, в отличие от C++, условные операторы могут проверять не только равенство, но и неравенство, больше или меньше. Также в Python используется аналогичная логика, но с некоторыми синтаксическими отличиями. Например, в Python отступы играют важную роль в определении блоков кода.</p>
+        </div>
+
+        <!-- Пример кода -->
+        <div class="section">
+            <h3>Пример кода</h3>
+            <p><strong>Преподаватель:</strong> Давайте посмотрим на простой пример, где мы проверим возраст пользователя и выведем сообщение в зависимости от этого:</p>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ru"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Условные операторы в JavaScript&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;script&gt;
+        let возраст = 18;
+
+        if (возраст &lt; 18) {
+            console.log("Вы ещё слишком молоды для этого.");
+        } else if (возраст &gt;= 18 &amp;&amp; возраст &lt; 65) {
+            console.log("Добро пожаловать!");
+        } else {
+            console.log("Вы заслуживаете уважения!");
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <p><strong>Преподаватель:</strong> В этом коде мы проверяем возраст пользователя и выводим соответствующее сообщение. Обратите внимание на оператор <code>&amp;&amp;</code>, который проверяет несколько условий одновременно.</p>
+        </div>
+
+        <!-- Практическая часть -->
+        <div class="section">
+            <h3>Практическая часть</h3>
+            <p><strong>Преподаватель:</strong> Теперь давайте создадим свой HTML-файл с условными операторами. Вот ваши шаги:</p>
+            <ul>
+                <li>Создайте файл <code>lesson4.html</code>.</li>
+                <li>Вставьте в него пример кода, который мы только что рассмотрели.</li>
+                <li>Измените значение переменной <code>возраст</code> и посмотрите, как меняется вывод в консоли.</li>
+            </ul>
+        </div>
+
+        <!-- Закрепление материала -->
+        <div class="section">
+            <h3>Закрепление материала</h3>
+            <p><strong>Преподаватель:</strong> Давайте обсудим несколько вопросов:</p>
+            <ul>
+                <li>Как работает оператор <code>if</code>?</li>
+                <li>Что такое оператор <code>else</code>?</li>
+                <li>В чём разница между <code>else if</code> и <code>switch</code>?</li>
+                <li>Как условные операторы в JavaScript сравниваются с C++ и Python?</li>
+            </ul>
+        </div>
+
+        <!-- Домашнее задание -->
+        <div class="section">
+            <h3>Домашнее задание</h3>
+            <p>1. Создайте переменную для хранения числа от 1 до 7 и используйте оператор <code>switch</code> для вывода названия дня недели в зависимости от числа.</p>
+            <pre><code>let день = 3;
+
+switch (день) {
+    case 1:
+        console.log("Понедельник");
+        break;
+    case 2:
+        console.log("Вторник");
+        break;
+    case 3:
+        console.log("Среда");
+        break;
+    case 4:
+        console.log("Четверг");
+        break;
+    case 5:
+        console.log("Пятница");
+        break;
+    case 6:
+        console.log("Суббота");
+        break;
+    case 7:
+        console.log("Воскресенье");
+        break;
+    default:
+        console.log("Неизвестный день");
+}</code></pre>
+            <p>2. Попробуйте изменить код так, чтобы вместо названия дня недели выводилось, является ли день рабочим или выходным.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Учебная программа по JavaScript</p>
+    </footer>
+</body>
+</html>

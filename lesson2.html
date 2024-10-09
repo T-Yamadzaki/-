@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Учебная программа по JavaScript - Урок 2</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #2196F3;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        h1, h2, h3 {
+            margin: 0;
+            padding: 0;
+        }
+        .content {
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h2 {
+            color: #2196F3;
+            border-bottom: 2px solid #2196F3;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+        p {
+            line-height: 1.6;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            color: #e83e8c;
+        }
+        ul {
+            margin-left: 20px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            margin-top: 20px;
+        }
+        .callout {
+            background-color: #e7f7ff;
+            border-left: 4px solid #2196F3;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+        .important {
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Учебная программа по JavaScript</h1>
+    </header>
+
+    <div class="content">
+        <h2>Урок 2: Переменные и типы данных</h2>
+
+        <!-- Введение -->
+        <div class="section">
+            <h3>Введение</h3>
+            <p><strong>Преподаватель:</strong> На прошлом уроке мы познакомились с основами JavaScript и научились подключать его к HTML-документу. Сегодня мы сделаем важный шаг вперёд — изучим, как хранить и использовать данные в JavaScript. Это делается с помощью переменных, и мы также поговорим о типах данных, которые JavaScript может обрабатывать.</p>
+            <p>В конце урока вы научитесь создавать переменные и работать с различными типами данных, такими как числа, строки и булевы значения.</p>
+        </div>
+
+        <!-- Теоретическая часть -->
+        <div class="section">
+            <h3>Теоретическая часть</h3>
+            <p><strong>Преподаватель:</strong> Переменные — это контейнеры для хранения данных. В JavaScript переменные создаются с помощью ключевых слов <code>let</code>, <code>const</code> и <code>var</code>. Давайте кратко рассмотрим, что означают эти ключевые слова:</p>
+            <ul>
+                <li><code>let</code> — создаёт переменную, значение которой может изменяться.</li>
+                <li><code>const</code> — создаёт переменную, значение которой не может быть изменено после её инициализации.</li>
+                <li><code>var</code> — устаревший способ объявления переменных, используемый в старых версиях JavaScript.</li>
+            </ul>
+
+            <p>Интересная особенность JavaScript — это динамическая типизация переменных. В отличие от других языков программирования, таких как C++ или Java, где переменные имеют строгий тип (например, целое число или строка), в JavaScript тип данных может изменяться. Это значит, что переменная может сначала содержать число, а затем — строку.</p>
+
+            <div class="callout">
+                <p><strong>Пример:</strong> Создание переменной и присвоение ей разных типов данных:</p>
+                <pre><code>let переменная = 10;
+переменная = "Теперь это строка";</code></pre>
+            </div>
+
+            <p><strong>Преподаватель:</strong> В других языках такое изменение типа данных могло бы вызвать ошибку, но в JavaScript переменные "плавают" между типами, что добавляет гибкости в их использовании. Однако стоит быть осторожными: такая гибкость иногда может привести к неожиданным результатам.</p>
+        </div>
+
+        <!-- Пример кода -->
+        <div class="section">
+            <h3>Пример кода</h3>
+            <p><strong>Преподаватель:</strong> Давайте рассмотрим простой пример, демонстрирующий работу с переменными и их изменяющимися типами. Мы создадим переменную, присвоим ей число, затем строку и выведем оба значения в консоль:</p>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ru"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Переменные в JavaScript&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;script&gt;
+        let данные = 20;
+        console.log("Числовое значение: " + данные);
+
+        данные = "Теперь это строка";
+        console.log("Строковое значение: " + данные);
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <p><strong>Преподаватель:</strong> В этом коде вы увидите, что переменная сначала содержит число, а затем — строку. Это демонстрирует динамическую типизацию JavaScript.</p>
+        </div>
+
+        <!-- Практическая часть -->
+        <div class="section">
+            <h3>Практическая часть</h3>
+            <p><strong>Преподаватель:</strong> Теперь давайте создадим свой HTML-файл, в котором будет код для работы с переменными. Вот ваши шаги:</p>
+            <ul>
+                <li>Создайте файл <code>lesson2.html</code>.</li>
+                <li>Вставьте в него пример кода, который мы только что рассмотрели.</li>
+                <li>Откройте файл в браузере и откройте консоль (клавиша <span class="important">F12</span>).</li>
+                <li>Проверьте вывод в консоли. Вы должны увидеть, как переменная изменяет своё значение с числа на строку.</li>
+            </ul>
+        </div>
+
+        <!-- Закрепление материала -->
+        <div class="section">
+            <h3>Закрепление материала</h3>
+            <p><strong>Преподаватель:</strong> Давайте обсудим несколько вопросов:</p>
+            <ul>
+                <li>Что такое переменные и как они используются?</li>
+                <li>Какие типы данных могут хранить переменные в JavaScript?</li>
+                <li>Что такое динамическая типизация переменных?</li>
+                <li>В чём разница между <code>let</code>, <code>const</code> и <code>var</code>?</li>
+            </ul>
+        </div>
+
+        <!-- Домашнее задание -->
+        <div class="section">
+            <h3>Домашнее задание</h3>
+            <p>1. Создайте переменные для хранения следующих данных: вашего имени, возраста и информации о том, являетесь ли вы студентом (логическое значение). Выведите их значения в консоль.</p>
+            <pre><code>let имя = "Ваше имя";
+let возраст = Ваш возраст;
+let студент = true; // или false</code></pre>
+            <p>2. Поэкспериментируйте с типами данных: измените значение переменной <code>возраст</code> на строку и проверьте, как это влияет на вывод в консоли.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Учебная программа по JavaScript</p>
+    </footer>
+</body>
+</html>

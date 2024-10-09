@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Учебная программа по JavaScript - Урок 9</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #2196F3;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        h1, h2, h3 {
+            margin: 0;
+            padding: 0;
+        }
+        .content {
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h2 {
+            color: #2196F3;
+            border-bottom: 2px solid #2196F3;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+        p {
+            line-height: 1.6;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            color: #e83e8c;
+        }
+        ul {
+            margin-left: 20px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            margin-top: 20px;
+        }
+        .callout {
+            background-color: #e7f7ff;
+            border-left: 4px solid #2196F3;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+        .important {
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Учебная программа по JavaScript</h1>
+    </header>
+
+    <div class="content">
+        <h2>Урок 9: Функции</h2>
+
+        <!-- Введение -->
+        <div class="section">
+            <h3>Введение</h3>
+            <p><strong>Преподаватель:</strong> На прошлом уроке мы изучали циклы. Сегодня мы поговорим о функциях. Функции позволяют нам организовывать код и повторно использовать его, что делает программы более структурированными и легкими для понимания.</p>
+            <p>В конце урока вы сможете создавать функции, передавать в них параметры и возвращать значения.</p>
+        </div>
+
+        <!-- Теоретическая часть -->
+        <div class="section">
+            <h3>Теоретическая часть</h3>
+            <p><strong>Преподаватель:</strong> Функции в JavaScript — это блоки кода, которые можно вызывать по имени. Основные моменты:</p>
+            <ul>
+                <li>Объявление функции с помощью ключевого слова <code>function</code>.</li>
+                <li>Передача параметров в функцию для работы с различными данными.</li>
+                <li>Возврат значений с помощью ключевого слова <code>return</code>.</li>
+            </ul>
+            <p>Интересный момент: в JavaScript функции являются объектами первого класса, что означает, что их можно передавать как аргументы другим функциям, возвращать из функций и сохранять в переменных. Это отличие от C++ и Python, где функции также могут быть объектами, но синтаксис и поведение немного отличаются.</p>
+        </div>
+
+        <!-- Пример кода -->
+        <div class="section">
+            <h3>Пример кода</h3>
+            <p><strong>Преподаватель:</strong> Давайте рассмотрим простой пример функции:</p>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ru"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Функции в JavaScript&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;script&gt;
+        // Объявление функции
+        function сложить(a, b) {
+            return a + b;
+        }
+
+        // Вызов функции
+        console.log(сложить(3, 5)); // 8
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <p>В этом коде мы создаем функцию <code>сложить</code>, которая принимает два параметра и возвращает их сумму. Мы затем вызываем эту функцию и выводим результат в консоль.</p>
+        </div>
+
+        <!-- Практическая часть -->
+        <div class="section">
+            <h3>Практическая часть</h3>
+            <p><strong>Преподаватель:</strong> Теперь давайте создадим свой HTML-файл с функциями. Вот ваши шаги:</p>
+            <ul>
+                <li>Создайте файл <code>lesson9.html</code>.</li>
+                <li>Вставьте в него пример кода, который мы только что рассмотрели.</li>
+                <li>Добавьте свою функцию, которая принимает строку и возвращает ее длину.</li>
+            </ul>
+        </div>
+
+        <!-- Закрепление материала -->
+        <div class="section">
+            <h3>Закрепление материала</h3>
+            <p><strong>Преподаватель:</strong> Давайте обсудим несколько вопросов:</p>
+            <ul>
+                <li>Как объявить функцию в JavaScript?</li>
+                <li>Как передавать параметры в функцию?</li>
+                <li>Что происходит, если функция не возвращает значение?</li>
+                <li>Как функции в JavaScript отличаются от функций в C++ и Python?</li>
+            </ul>
+        </div>
+
+        <!-- Домашнее задание -->
+        <div class="section">
+            <h3>Домашнее задание</h3>
+            <p>1. Напишите функцию, которая принимает массив чисел и возвращает их среднее значение.</p>
+            <pre><code>function среднее(arr) {
+    let сумма = 0;
+    for (let i = 0; i &lt; arr.length; i++) {
+        сумма += arr[i];
+    }
+    return сумма / arr.length;
+}</code></pre>
+            <p>2. Создайте функцию, которая принимает два числа и возвращает большее из них.</p>
+            <pre><code>function большее(a, b) {
+    return a &gt; b ? a : b;
+}</code></pre>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Учебная программа по JavaScript</p>
+    </footer>
+</body>
+</html>

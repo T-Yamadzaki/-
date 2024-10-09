@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Учебная программа по JavaScript - Урок 8</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #2196F3;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        h1, h2, h3 {
+            margin: 0;
+            padding: 0;
+        }
+        .content {
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h2 {
+            color: #2196F3;
+            border-bottom: 2px solid #2196F3;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+        p {
+            line-height: 1.6;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            color: #e83e8c;
+        }
+        ul {
+            margin-left: 20px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            margin-top: 20px;
+        }
+        .callout {
+            background-color: #e7f7ff;
+            border-left: 4px solid #2196F3;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+        .important {
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Учебная программа по JavaScript</h1>
+    </header>
+
+    <div class="content">
+        <h2>Урок 8: Циклы</h2>
+
+        <!-- Введение -->
+        <div class="section">
+            <h3>Введение</h3>
+            <p><strong>Преподаватель:</strong> На прошлом уроке мы изучали условия и логические операторы. Сегодня мы поговорим о циклах. Циклы позволяют выполнять блок кода несколько раз, что делает ваши программы более эффективными и сокращает количество дублирующегося кода.</p>
+            <p>В конце урока вы сможете использовать циклы <code>for</code>, <code>while</code> и <code>do...while</code>.</p>
+        </div>
+
+        <!-- Теоретическая часть -->
+        <div class="section">
+            <h3>Теоретическая часть</h3>
+            <p><strong>Преподаватель:</strong> Циклы в JavaScript помогают выполнять повторяющиеся задачи. Основные виды циклов:</p>
+            <ul>
+                <li><code>for</code>: используется, когда заранее известно количество итераций.</li>
+                <li><code>while</code>: продолжает выполнение, пока условие истинно.</li>
+                <li><code>do...while</code>: выполняет блок кода хотя бы один раз, даже если условие ложно.</li>
+            </ul>
+            <p>Интересный момент: в JavaScript циклы можно использовать вместе с массивами для перебора их элементов. Это похоже на использование циклов в C++ и Python, но с небольшими отличиями в синтаксисе. Например, в JavaScript у вас есть метод <code>forEach</code> для массивов, который упрощает перебор элементов.</p>
+        </div>
+
+        <!-- Пример кода -->
+        <div class="section">
+            <h3>Пример кода</h3>
+            <p><strong>Преподаватель:</strong> Давайте рассмотрим простой пример использования циклов:</p>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ru"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Циклы в JavaScript&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;script&gt;
+        // Цикл for
+        for (let i = 0; i &lt; 5; i++) {
+            console.log('Итерация ' + i);
+        }
+
+        // Цикл while
+        let j = 0;
+        while (j &lt; 5) {
+            console.log('Итерация ' + j);
+            j++;
+        }
+
+        // Цикл do...while
+        let k = 0;
+        do {
+            console.log('Итерация ' + k);
+            k++;
+        } while (k &lt; 5);
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <p>В этом коде мы используем три разных цикла для выполнения одной и той же задачи — выводим итерации от 0 до 4.</p>
+        </div>
+
+        <!-- Практическая часть -->
+        <div class="section">
+            <h3>Практическая часть</h3>
+            <p><strong>Преподаватель:</strong> Теперь давайте создадим свой HTML-файл с циклами. Вот ваши шаги:</p>
+            <ul>
+                <li>Создайте файл <code>lesson8.html</code>.</li>
+                <li>Вставьте в него пример кода, который мы только что рассмотрели.</li>
+                <li>Измените код так, чтобы выводились числа от 1 до 10 с помощью каждого типа цикла.</li>
+            </ul>
+        </div>
+
+        <!-- Закрепление материала -->
+        <div class="section">
+            <h3>Закрепление материала</h3>
+            <p><strong>Преподаватель:</strong> Давайте обсудим несколько вопросов:</p>
+            <ul>
+                <li>Как работает цикл <code>for</code>?</li>
+                <li>Когда лучше использовать цикл <code>while</code>?</li>
+                <li>Как цикл <code>do...while</code> отличается от <code>while</code>?</li>
+                <li>Как перебор массивов в JavaScript сравнивается с C++ и Python?</li>
+            </ul>
+        </div>
+
+        <!-- Домашнее задание -->
+        <div class="section">
+            <h3>Домашнее задание</h3>
+            <p>1. Напишите цикл, который выводит все четные числа от 0 до 20.</p>
+            <pre><code>for (let i = 0; i &lt;= 20; i++) {
+    if (i % 2 === 0) {
+        console.log(i);
+    }
+}</code></pre>
+            <p>2. Создайте массив с именами ваших друзей и используйте цикл <code>for</code>, чтобы вывести их на экран.</p>
+            <pre><code>let друзья = ['Аня', 'Саша', 'Петя'];
+for (let i = 0; i &lt; друзья.length; i++) {
+    console.log(друзья[i]);
+}</code></pre>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Учебная программа по JavaScript</p>
+    </footer>
+</body>
+</html>

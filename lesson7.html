@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Учебная программа по JavaScript - Урок 7</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #2196F3;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        h1, h2, h3 {
+            margin: 0;
+            padding: 0;
+        }
+        .content {
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h2 {
+            color: #2196F3;
+            border-bottom: 2px solid #2196F3;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+        p {
+            line-height: 1.6;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            color: #e83e8c;
+        }
+        ul {
+            margin-left: 20px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            margin-top: 20px;
+        }
+        .callout {
+            background-color: #e7f7ff;
+            border-left: 4px solid #2196F3;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+        .important {
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Учебная программа по JavaScript</h1>
+    </header>
+
+    <div class="content">
+        <h2>Урок 7: Условия и логические операторы</h2>
+
+        <!-- Введение -->
+        <div class="section">
+            <h3>Введение</h3>
+            <p><strong>Преподаватель:</strong> На прошлом уроке мы изучали объекты и массивы. Сегодня мы поговорим об условиях и логических операторах. Условия позволяют принимать решения в коде, а логические операторы помогают комбинировать эти условия.</p>
+            <p>В конце урока вы сможете использовать конструкции <code>if</code>, <code>else</code> и <code>switch</code>.</p>
+        </div>
+
+        <!-- Теоретическая часть -->
+        <div class="section">
+            <h3>Теоретическая часть</h3>
+            <p><strong>Преподаватель:</strong> Условия в JavaScript позволяют выполнять разные действия в зависимости от истинности выражений. Основные конструкции:</p>
+            <ul>
+                <li>Конструкция <code>if</code> проверяет условие и выполняет код, если условие истинно.</li>
+                <li>Конструкция <code>else</code> выполняется, если предыдущее условие ложно.</li>
+                <li>Конструкция <code>switch</code> используется для выбора одного из нескольких блоков кода для выполнения.</li>
+            </ul>
+            <p>Интересный момент: в JavaScript логические операторы <code>&&</code> (и), <code>||</code> (или) и <code>!</code> (не) могут использоваться для комбинирования условий. Это аналогично C++ и Python, но синтаксис может немного отличаться.</p>
+        </div>
+
+        <!-- Пример кода -->
+        <div class="section">
+            <h3>Пример кода</h3>
+            <p><strong>Преподаватель:</strong> Давайте рассмотрим простой пример использования условий:</p>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ru"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Условия в JavaScript&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;script&gt;
+        let возраст = 18;
+
+        if (возраст &gt;= 18) {
+            console.log('Вы совершеннолетний.');
+        } else {
+            console.log('Вы несовершеннолетний.');
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <p>В этом коде мы проверяем, является ли человек совершеннолетним, и выводим соответствующее сообщение.</p>
+        </div>
+
+        <!-- Практическая часть -->
+        <div class="section">
+            <h3>Практическая часть</h3>
+            <p><strong>Преподаватель:</strong> Теперь давайте создадим свой HTML-файл с условиями. Вот ваши шаги:</p>
+            <ul>
+                <li>Создайте файл <code>lesson7.html</code>.</li>
+                <li>Вставьте в него пример кода, который мы только что рассмотрели.</li>
+                <li>Измените код так, чтобы он проверял, есть ли у вас права на вождение (возраст должен быть больше 16).</li>
+            </ul>
+        </div>
+
+        <!-- Закрепление материала -->
+        <div class="section">
+            <h3>Закрепление материала</h3>
+            <p><strong>Преподаватель:</strong> Давайте обсудим несколько вопросов:</p>
+            <ul>
+                <li>Что такое конструкция <code>if</code>?</li>
+                <li>Как работает конструкция <code>switch</code>?</li>
+                <li>Как вы можете комбинировать условия с помощью логических операторов?</li>
+                <li>В чём разница в использовании условий в JavaScript, C++ и Python?</li>
+            </ul>
+        </div>
+
+        <!-- Домашнее задание -->
+        <div class="section">
+            <h3>Домашнее задание</h3>
+            <p>1. Создайте условие, которое проверяет, является ли число четным или нечетным, и выводит соответствующее сообщение.</p>
+            <pre><code>let число = 10;
+if (число % 2 === 0) {
+    console.log('Число четное.');
+} else {
+    console.log('Число нечетное.');
+}</code></pre>
+            <p>2. Напишите программу, которая использует конструкцию <code>switch</code> для вывода названия дня недели по номеру (1 — понедельник, 2 — вторник и т.д.).</p>
+            <pre><code>let день = 3;
+switch (день) {
+    case 1:
+        console.log('Понедельник');
+        break;
+    case 2:
+        console.log('Вторник');
+        break;
+    case 3:
+        console.log('Среда');
+        break;
+    default:
+        console.log('Некорректный номер');
+}</code></pre>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Учебная программа по JavaScript</p>
+    </footer>
+</body>
+</html>

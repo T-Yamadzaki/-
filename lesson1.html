@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Учебная программа по JavaScript - Урок 1</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        h1, h2, h3 {
+            margin: 0;
+            padding: 0;
+        }
+        .content {
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h2 {
+            color: #4CAF50;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+        p {
+            line-height: 1.6;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 4px solid #4CAF50;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            color: #e83e8c;
+        }
+        ul {
+            margin-left: 20px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            margin-top: 20px;
+        }
+        .callout {
+            background-color: #e7f7e9;
+            border-left: 4px solid #4CAF50;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+        .important {
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Учебная программа по JavaScript</h1>
+    </header>
+
+    <div class="content">
+        <h2>Урок 1: Введение в JavaScript</h2>
+
+        <!-- Введение -->
+        <div class="section">
+            <h3>Введение</h3>
+            <p><strong>Преподаватель:</strong> Ребята, сегодня мы начинаем изучать один из самых популярных языков программирования для создания интерактивных веб-сайтов — JavaScript. Этот язык позволяет нам добавлять на страницы динамические элементы, такие как кнопки, формы, анимации и многое другое. Вы уже знакомы с HTML и CSS, которые отвечают за структуру и внешний вид страниц. JavaScript, в свою очередь, добавляет интерактивность — мы можем реагировать на действия пользователя и менять содержимое страниц без перезагрузки.</p>
+            <p>Сегодня мы изучим основы JavaScript: что это такое, где он работает и как его использовать для добавления функционала на наши страницы. В конце урока вы напишете свой первый код на JavaScript.</p>
+        </div>
+
+        <!-- Теоретическая часть -->
+        <div class="section">
+            <h3>Теоретическая часть</h3>
+            <p><strong>Преподаватель:</strong> JavaScript — это язык программирования, который используется для добавления интерактивных элементов на веб-сайты. Вы, наверное, замечали, как некоторые страницы реагируют на клики, меняют изображения при наведении или обновляют данные без перезагрузки. Это всё возможно благодаря JavaScript.</p>
+            <p>JavaScript работает прямо в браузере, что делает его очень удобным для веб-разработки. Ваш браузер, например Chrome или Firefox, может выполнить JavaScript-код, как только страница загрузится.</p>
+            <div class="callout">
+                <p><strong>Интересный факт:</strong> JavaScript является основным языком для фронтенд-разработки и поддерживается всеми современными браузерами.</p>
+            </div>
+        </div>
+
+        <!-- Пример кода -->
+        <div class="section">
+            <h3>Пример кода</h3>
+            <p><strong>Преподаватель:</strong> Теперь давайте посмотрим, как подключить JavaScript к HTML. Вот простой пример:</p>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ru"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Моя первая страница с JavaScript&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Привет, мир!&lt;/h1&gt;
+
+    &lt;script&gt;
+        console.log("JavaScript подключен правильно!");
+    &lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <p><strong>Преподаватель:</strong> Этот код выводит сообщение в консоль браузера, когда страница загружается. Откройте консоль, нажав клавишу <span class="important">F12</span>, и выберите вкладку "Консоль".</p>
+        </div>
+
+        <!-- Практическая часть -->
+        <div class="section">
+            <h3>Практическая часть</h3>
+            <p><strong>Преподаватель:</strong> Теперь давайте создадим HTML-документ с этим кодом и проверим его в браузере. Вот ваши шаги:</p>
+            <ul>
+                <li>Откройте текстовый редактор (например, Notepad++).</li>
+                <li>Создайте новый файл с именем <code>index.html</code>.</li>
+                <li>Вставьте приведённый выше HTML-код и сохраните файл.</li>
+                <li>Откройте файл в браузере и откройте консоль разработчика (клавиша <span class="important">F12</span>).</li>
+                <li>Если всё сделано правильно, в консоли появится сообщение <code>JavaScript подключен правильно!</code>.</li>
+            </ul>
+        </div>
+
+        <!-- Закрепление материала -->
+        <div class="section">
+            <h3>Закрепление материала</h3>
+            <p><strong>Преподаватель:</strong> Давайте обсудим несколько вопросов:</p>
+            <ul>
+                <li>Что такое JavaScript и зачем он нужен?</li>
+                <li>Как подключить JavaScript к HTML-странице?</li>
+                <li>Что такое консоль браузера и как она помогает разработчикам?</li>
+            </ul>
+        </div>
+
+        <!-- Домашнее задание -->
+        <div class="section">
+            <h3>Домашнее задание</h3>
+            <p>1. Напишите код с использованием <code>alert()</code>, чтобы вывести всплывающее сообщение на страницу:</p>
+            <pre><code>alert("Добро пожаловать на мою страницу!");</code></pre>
+            <p>2. Найдите 3 примера сайтов, где используется JavaScript для интерактивных элементов (например, слайдеры, формы).</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Учебная программа по JavaScript</p>
+    </footer>
+</body>
+</html>
