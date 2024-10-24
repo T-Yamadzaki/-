@@ -40,41 +40,6 @@
 
     <h1>Учебный план по JavaScript</h1>
 
-<div class="lesson">
- <form id="contactForm">
-    <label for="name">Ваше имя:</label>
-    <input type="text" id="name" name="name" required>
-
-    <label for="email">Ваш email:</label>
-    <input type="email" id="email" name="email" required>
-
-    <label for="message">Сообщение:</label>
-    <textarea id="message" name="message" required></textarea>
-
-    <button type="submit">Отправить</button>
-</form>
-
-<script>
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-
-        const formData = new FormData(this);
-
-        fetch('https://example.com/submit', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.json())
-        .then(data => {
-            alert('Форма успешно отправлена!');
-        })
-        .catch(error => {
-            alert('Ошибка при отправке формы');
-        });
-    });
-</script>
-
-</div>
     <div class="lesson">
         <h2>1-10 уроки: Основы JavaScript</h2>
         <ul>
