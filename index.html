@@ -37,7 +37,53 @@
     </style>
 </head>
 <body>
- 
+<div class="lesson">
+<h2>Настройки пользователя</h2>
+<label>Имя пользователя: <input type="text" id="username"></label><br>
+<label>Цвет фона: <input type="color" id="bgColor"></label><br>
+<button onclick="saveSettings()">Сохранить настройки</button>
+<button onclick="clearSettings()">Очистить настройки</button>
+
+<script>
+    // Функция для сохранения настроек в LocalStorage
+    function saveSettings() {
+        const username = document.getElementById('username').value;
+        const bgColor = document.getElementById('bgColor').value;
+        
+        localStorage.setItem('username', username);
+        localStorage.setItem('bgColor', bgColor);
+        
+        applySettings();
+    }
+
+    // Функция для применения настроек
+    function applySettings() {
+        const savedUsername = localStorage.getItem('username');
+        const savedBgColor = localStorage.getItem('bgColor');
+        
+        if (savedUsername) {
+            document.body.innerHTML += `<h3>Добро пожаловать, ${savedUsername}!</h3>`;
+        }
+        
+        if (savedBgColor) {
+            document.body.style.backgroundColor = savedBgColor;
+        }
+    }
+
+    // Функция для очистки настроек
+    function clearSettings() {
+        localStorage.clear();
+        location.reload(); // Перезагрузка страницы для сброса настроек
+    }
+
+    // Применение настроек при загрузке страницы
+    applySettings();
+</script>
+    
+</div>
+
+
+    
     <h1>Учебный план по JavaScript</h1>
   <div class="lesson">
         <h2>1-10 уроки: Основы JavaScript</h2>
