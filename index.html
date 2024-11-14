@@ -3,183 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Учебный план по JavaScript</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-            color: #343a40;
-            margin: 0;
-            padding: 20px;
-        }
-        h1 {
-            text-align: center;
-            color: #007bff;
-        }
-        .lesson {
-            background-color: #ffffff;
-            border: 1px solid #dee2e6;
-            border-radius: 5px;
-            padding: 15px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .lesson h2 {
-            color: #495057;
-        }
-        .lesson ul {
-            list-style-type: disc;
-            padding-left: 20px;
-        }
-        .lesson li {
-            margin: 5px 0;
-        }
-    </style>
+    <title>Психологический Тест</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="lesson">
-<h2>Настройки пользователя</h2>
-<label>Имя пользователя: <input type="text" id="username"></label><br>
-<label>Цвет фона: <input type="color" id="bgColor"></label><br>
-<button onclick="saveSettings()">Сохранить настройки</button>
-<button onclick="clearSettings()">Очистить настройки</button>
-
-<script>
-    // Функция для сохранения настроек в LocalStorage
-    function saveSettings() {
-        const username = document.getElementById('username').value;
-        const bgColor = document.getElementById('bgColor').value;
-        
-        localStorage.setItem('username', username);
-        localStorage.setItem('bgColor', bgColor);
-        
-        applySettings();
-    }
-
-    // Функция для применения настроек
-    function applySettings() {
-        const savedUsername = localStorage.getItem('username');
-        const savedBgColor = localStorage.getItem('bgColor');
-        
-        if (savedUsername) {
-            document.body.innerHTML += `<h3>Добро пожаловать, ${savedUsername}!</h3>`;
-        }
-        
-        if (savedBgColor) {
-            document.body.style.backgroundColor = savedBgColor;
-        }
-    }
-
-    // Функция для очистки настроек
-    function clearSettings() {
-        localStorage.clear();
-        location.reload(); // Перезагрузка страницы для сброса настроек
-    }
-
-    // Применение настроек при загрузке страницы
-    applySettings();
-</script>
-    
-</div>
-
-
-    
-    <h1>Учебный план по JavaScript</h1>
-  <div class="lesson">
-        <h2>1-10 уроки: Основы JavaScript</h2>
-        <ul>
-            <li><a href="lesson1.html">1. Введение в JavaScript: что это такое и где используется.</a></li>
-            <li><a href="lesson2.html">2. Переменные и типы данных.</a></li>
-            <li><a href="lesson3.html">3. Циклы в JavaScript</a></li>
-            <li><a href="lesson4.html">4. Условия в JavaScript</a></li>
-            <li><a href="lesson5.html">5. Массивы в JavaScript</a></li>
-            <li><a href="lesson6.html">6. Функции: объявление и вызов.</a></li>
-            <li><a href="lesson7.html">7. Объекты в JavaScript</a></li>
-            <li><a href="lesson8.html">8. Взаимодействие массивов и объектов в JavaScript</a></li>
-            <li><a href="lesson9.html">9. Основные команды JavaScript для работы с HTML</a></li>
-            <li><a href="lesson10.html">10. Обработка событий в JavaScript</a></li>
-        </ul>
+    <div id="header">
+        <img src="Yamadzaki.png" alt="Логотип" id="logo">
+        <h1>Тест Величайшего</h1>
     </div>
 
-    <div class="lesson">
-        <h2>11-20 уроки: DOM (Document Object Model)</h2>
-        <ul>
-            <li>11. Введение в DOM: что это такое?</li>
-            <li>12. Поиск элементов в DOM (getElementById, querySelector).</li>
-            <li>13. Изменение контента и стилей элементов.</li>
-            <li>14. Создание и удаление элементов в DOM.</li>
-            <li>15. События: что такое события и как их обрабатывать.</li>
-            <li>16. Обработчики событий: добавление и удаление.</li>
-            <li>17. События мыши: click, mouseover, mouseout.</li>
-            <li>18. События клавиатуры: keydown, keyup.</li>
-            <li>19. Прокрутка и изменение размеров окна.</li>
-            <li>20. Практика: создание интерактивного списка задач.</li>
-        </ul>
+    <div id="welcome-container">
+        <p>Добро пожаловать! Пройдите тест, чтобы узнать больше о себе.</p>
+        <a href="index2.html">Начать тест</a>
     </div>
 
-    <div class="lesson">
-        <h2>21-30 уроки: Современные возможности JavaScript (ES6)</h2>
-        <ul>
-            <li>21. Введение в ES6: что нового?</li>
-            <li>22. Стрелочные функции.</li>
-            <li>23. Шаблонные строки.</li>
-            <li>24. Деструктуризация объектов и массивов.</li>
-            <li>25. Модули: экспорт и импорт.</li>
-            <li>26. Промисы: что это и как они работают.</li>
-            <li>27. Async/Await: асинхронные функции.</li>
-            <li>28. Работа с AJAX: основа XMLHttpRequest.</li>
-            <li>29. Fetch API: получение данных.</li>
-            <li>30. Практика: создание простого приложения с использованием API.</li>
-        </ul>
-    </div>
 
-    <div class="lesson">
-        <h2>31-40 уроки: Работа с API</h2>
-        <ul>
-            <li>31. Введение в API: что это и как с ними работать.</li>
-            <li>32. Обработка данных в формате JSON.</li>
-            <li>33. Отправка данных на сервер: POST-запросы.</li>
-            <li>34. Обработка ошибок при работе с API.</li>
-            <li>35. Создание приложения для работы с внешним API (например, погода).</li>
-            <li>36. Кросс-доменные запросы (CORS).</li>
-            <li>37. Установка и использование библиотек для работы с API (например, Axios).</li>
-            <li>38. Сохранение данных в LocalStorage.</li>
-            <li>39. Создание простого блога с использованием API.</li>
-            <li>40. Практика: создание приложения для заметок.</li>
-        </ul>
-    </div>
 
-    <div class="lesson">
-        <h2>41-50 уроки: Фреймворки и библиотеки</h2>
-        <ul>
-            <li>41. Введение в библиотеки и фреймворки.</li>
-            <li>42. Знакомство с jQuery: основные функции.</li>
-            <li>43. Манипуляция DOM с jQuery.</li>
-            <li>44. Введение в React: основные концепции.</li>
-            <li>45. Создание компонентов в React.</li>
-            <li>46. Управление состоянием в React (useState).</li>
-            <li>47. Обработка событий в React.</li>
-            <li>48. Знакомство с Vue.js: основные концепции.</li>
-            <li>49. Создание компонентов в Vue.js.</li>
-            <li>50. Практика: создание простого приложения на React или Vue.js.</li>
-        </ul>
-    </div>
 
-    <div class="lesson">
-        <h2>51-60 уроки: Оптимизация, безопасность и проект</h2>
-        <ul>
-            <li>51. Основы UX/UI: принципы дизайна.</li>
-            <li>52. Оптимизация производительности JavaScript.</li>
-            <li>53. Минификация и сборка проектов (например, Webpack).</li>
-            <li>54. Основы безопасности: XSS и CSRF.</li>
-            <li>55. Защита данных в веб-приложениях.</li>
-            <li>56. Знакомство с системами контроля версий (например, Git).</li>
-            <li>57. Работа с проектами: планирование и организация.</li>
-            <li>58. Презентация проектов: как представить свою работу.</li>
-            <li>59. Финальный проект: создание собственного веб-приложения.</li>
-            <li>60. Обсуждение и анализ финальных проектов.</li>
-        </ul>
-    </div>
 
+    <script src="script.js"></script>
 </body>
 </html>
