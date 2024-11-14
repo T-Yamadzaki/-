@@ -60,7 +60,6 @@ const questions = [
     { text: "Я склонен к самокритике и беспокойству.", category: "neuroticism" }
 ];
 
-// Переменные для отслеживания текущего вопроса и результатов
 let currentQuestion = 0;
 const answers = {
     openness: 0,
@@ -70,14 +69,23 @@ const answers = {
     neuroticism: 0
 };
 
+
+
 function startTest() {
+    // Скрываем экран приветствия и показываем вопросы
     document.getElementById("welcome-container").classList.add("hidden");
     document.getElementById("question-container").classList.remove("hidden");
+
+    // Поменяем текст на первый вопрос
     showQuestion();
+    // Меняем текст на кнопке на "Следующий вопрос"
+    document.getElementById("start-button").style.display = "none";
+    document.getElementById("next-button").style.display = "inline-block";
 }
 
 function showQuestion() {
-    document.getElementById("question-text").textContent = questions[currentQuestion].text;
+    const question = questions[currentQuestion];
+    document.getElementById("question-text").textContent = question.text;
 }
 
 function nextQuestion() {
@@ -86,7 +94,7 @@ function nextQuestion() {
         alert("Выберите вариант ответа, чтобы продолжить!");
         return;
     }
-    
+
     answers[questions[currentQuestion].category] += parseInt(selectedAnswer.value);
     selectedAnswer.checked = false;
     currentQuestion++;
@@ -99,6 +107,7 @@ function nextQuestion() {
 }
 
 function showResults() {
+    // Скрываем вопросы и показываем результаты
     document.getElementById("question-container").classList.add("hidden");
     document.getElementById("result-container").classList.remove("hidden");
 
@@ -108,11 +117,31 @@ function showResults() {
 
 function generateInterpretation() {
     const interpretations = {
-        openness: { /* добавьте развернутые описания для openness */ },
-        conscientiousness: { /* добавьте развернутые описания для conscientiousness */ },
-        extraversion: { /* добавьте развернутые описания для extraversion */ },
-        agreeableness: { /* добавьте развернутые описания для agreeableness */ },
-        neuroticism: { /* добавьте развернутые описания для neuroticism */ }
+        openness: {
+            high: "Высокая открытость: Вы любите новое, творческое и нестандартное. Стремитесь к самовыражению и новизне.",
+            medium: "Средняя открытость: Вы иногда проявляете интерес к новому, но предпочитаете проверенные пути.",
+            low: "Низкая открытость: Вы цените стабильность и предпочитаете следовать знакомым методам и идеям."
+        },
+        conscientiousness: {
+            high: "Высокая добросовестность: Вы организованы, ответственны и настойчивы в своих целях.",
+            medium: "Средняя добросовестность: Вы стремитесь к порядку, но иногда можете проявлять гибкость в работе.",
+            low: "Низкая добросовестность: Вы предпочитаете спонтанность и не всегда следуете строго планам."
+        },
+        extraversion: {
+            high: "Высокая экстраверсия: Вы энергичны, любите общение и активность в больших группах.",
+            medium: "Средняя экстраверсия: Вы можете проявлять активность в социальной среде, но цените и спокойное время наедине.",
+            low: "Низкая экстраверсия: Вы предпочитаете уединение, чувствуете себя комфортно наедине и избегаете больших групп."
+        },
+        agreeableness: {
+            high: "Высокая доброжелательность: Вы заботитесь о других, поддерживаете гармонию и любите помогать людям.",
+            medium: "Средняя доброжелательность: Вы иногда идете на компромисс, но можете отстаивать свое мнение.",
+            low: "Низкая доброжелательность: Вы независимы, отстаиваете свои интересы и не всегда идете на уступки."
+        },
+        neuroticism: {
+            high: "Высокий нейротизм: Вы часто переживаете и реагируете эмоционально на стрессовые ситуации.",
+            medium: "Средний нейротизм: Вы можете иногда переживать стресс, но в целом способны справляться с эмоциями.",
+            low: "Низкий нейротизм: Вы уверены в себе, редко испытываете тревогу и хорошо справляетесь со стрессом."
+        }
     };
 
     const resultStrings = [];
@@ -129,7 +158,7 @@ function generateInterpretation() {
             interpretation = interpretations[category].low;
         }
 
-        resultStrings.push(interpretation);
+        resultStrings.push(`<b>${category.charAt(0).toUpperCase() + category.slice(1)}</b>: ${interpretation}`);
     }
 
     return resultStrings.join("<br><br>");
@@ -142,4 +171,6 @@ function restartTest() {
     }
     document.getElementById("result-container").classList.add("hidden");
     document.getElementById("welcome-container").classList.remove("hidden");
+    document.getElementById("start-button").style.display = "inline-block"; // Показать кнопку Старт
+    document.getElementById("next-button").style.display = "none"; // Скрыть кнопку "Следующий вопрос"
 }
