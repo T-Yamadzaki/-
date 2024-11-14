@@ -158,7 +158,7 @@ function generateInterpretation() {
             interpretation = interpretations[category].low;
         }
 
-        resultStrings.push(`<b>${category.charAt(0).toUpperCase() + category.slice(1)}</b>: ${interpretation}`);
+        resultStrings.push(` ${interpretation}`);
     }
 
     return resultStrings.join("<br><br>");
