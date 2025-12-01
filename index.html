@@ -1,110 +1,140 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Играй в слоты</title>
-  <style>
-    /* Общие стили */
-    body, html {
-      margin: 0;
-      padding: 0;
-      font-family: 'Arial', sans-serif;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-     background: url('https://fan-casino.ru/img/1win/foto-1/foto-1-1win.jpg') no-repeat center center;
-
-    }
-
-    /* Анимация градиента для заднего фона */
-
-    @keyframes gradient {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
-    }
-
-    .container {
-      background: rgba(0, 0, 0, 0.85);
-      padding: 50px 25px;
-      border-radius: 25px;
-      max-width: 450px;
-      text-align: center;
-      box-shadow: 0 0 40px rgba(255, 204, 0, 0.8);
-      border: 2px solid #ffcc00;
-    }
-
-    h1 {
-      font-size: 2.2em;
-      margin-bottom: 20px;
-      color: #ffcc00;
-      text-shadow: 0 0 10px #ffcc00, 0 0 20px #ff9900;
-    }
-
-    p {
-      font-size: 1.1em;
-      margin-bottom: 30px;
-      color: #fff;
-      text-shadow: 0 0 5px #ff9900;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 18px 40px;
-      font-size: 1.3em;
-      color: #1a1a1a;
-      background: linear-gradient(45deg, #ffcc00, #ff9900);
-      border-radius: 15px;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 0 15px #ffcc00, 0 0 30px #ff9900 inset;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 25px #ffcc00, 0 0 40px #ff9900 inset;
-    }
-
-    /* Декоративные монеты на фоне */
-    .coin {
-      position: absolute;
-      width: 75px;
-      height: 75px;
-      object-fit: contain;
-      background-size: contain;
-      background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiygLlgDAdwt0q55oRkXyw-kVoKASSEIScmyWc9Vqlc04AS7I7kUvUj0Mioj4WX8SGGK0&usqp=CAU');
-      border-radius: 50%;
-      animation: floatCoin 5s linear infinite;
-      opacity: 0.7;
-
-    }
-
-    @keyframes floatCoin {
-      0% {transform: translateY(0px) rotate(0deg);}
-      50% {transform: translateY(-100px) rotate(180deg);}
-      100% {transform: translateY(0px) rotate(360deg);}
-    }
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Учебный план по JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
+        .lesson {
+            background-color: #ffffff;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .lesson h2 {
+            color: #495057;
+        }
+        .lesson ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        .lesson li {
+            margin: 5px 0;
+        }
+    </style>
 </head>
 <body>
 
+    <h1>Учебный план по JavaScript</h1>
 
-  <div class="container">
-    <h1>Испытай удачу в слотах!</h1>
-    <p>Эмоции, драйв и яркие выигрыши ждут тебя 🎰✨</p>
-    <a class="button" href="https://lkhq.cc/547c68b9" target="_blank">Играть</a>
-  </div>
+    <div class="lesson">
+        <h2>1-10 уроки: Основы JavaScript</h2>
+        <ul>
+            <li><a href="lesson1.html">1. Введение в JavaScript: что это такое и где используется.</a></li>
+            <li><a href="lesson2.html">2. Переменные и типы данных.</a></li>
+            <li><a href="lesson3.html">3. Операторы: арифметические, логические и сравнения.</a></li>
+            <li><a href="lesson4.html">4. Условия: if, else, switch.</a></li>
+            <li><a href="lesson5.html">5. Циклы: for, while, do-while.</a></li>
+            <li><a href="lesson6.html">6. Функции: объявление и вызов.</a></li>
+            <li><a href="lesson7.html">7. Параметры функций и возвращаемые значения.</a></li>
+            <li><a href="lesson8.html">8. Области видимости переменных: локальные и глобальные.</a></li>
+            <li><a href="lesson9.html">9. Массивы: создание и основные методы.</a></li>
+            <li><a href="lesson10.html">10. Объекты: создание и работа с объектами.</a></li>
+        </ul>
+    </div>
 
-  <!-- Декоративные монеты -->
-  <div class="coin" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGDHShI_hKwTac2vFNNCX3bVP8xBr5_wK1Sw&s" style="top: 10%; left: 15%; animation-delay: 0s;"></div>
-  <div class="coin" style="top: 20%; left: 70%; animation-delay: 1s;"></div>
-  <div class="coin" style="top: 60%; left: 30%; animation-delay: 2s;"></div>
-  <div class="coin" style="top: 50%; left: 80%; animation-delay: 3s;"></div>
-  <div class="coin" style="top: 75%; left: 50%; animation-delay: 4s;"></div>
+    <div class="lesson">
+        <h2>11-20 уроки: DOM (Document Object Model)</h2>
+        <ul>
+            <li>11. Введение в DOM: что это такое?</li>
+            <li>12. Поиск элементов в DOM (getElementById, querySelector).</li>
+            <li>13. Изменение контента и стилей элементов.</li>
+            <li>14. Создание и удаление элементов в DOM.</li>
+            <li>15. События: что такое события и как их обрабатывать.</li>
+            <li>16. Обработчики событий: добавление и удаление.</li>
+            <li>17. События мыши: click, mouseover, mouseout.</li>
+            <li>18. События клавиатуры: keydown, keyup.</li>
+            <li>19. Прокрутка и изменение размеров окна.</li>
+            <li>20. Практика: создание интерактивного списка задач.</li>
+        </ul>
+    </div>
+
+    <div class="lesson">
+        <h2>21-30 уроки: Современные возможности JavaScript (ES6)</h2>
+        <ul>
+            <li>21. Введение в ES6: что нового?</li>
+            <li>22. Стрелочные функции.</li>
+            <li>23. Шаблонные строки.</li>
+            <li>24. Деструктуризация объектов и массивов.</li>
+            <li>25. Модули: экспорт и импорт.</li>
+            <li>26. Промисы: что это и как они работают.</li>
+            <li>27. Async/Await: асинхронные функции.</li>
+            <li>28. Работа с AJAX: основа XMLHttpRequest.</li>
+            <li>29. Fetch API: получение данных.</li>
+            <li>30. Практика: создание простого приложения с использованием API.</li>
+        </ul>
+    </div>
+
+    <div class="lesson">
+        <h2>31-40 уроки: Работа с API</h2>
+        <ul>
+            <li>31. Введение в API: что это и как с ними работать.</li>
+            <li>32. Обработка данных в формате JSON.</li>
+            <li>33. Отправка данных на сервер: POST-запросы.</li>
+            <li>34. Обработка ошибок при работе с API.</li>
+            <li>35. Создание приложения для работы с внешним API (например, погода).</li>
+            <li>36. Кросс-доменные запросы (CORS).</li>
+            <li>37. Установка и использование библиотек для работы с API (например, Axios).</li>
+            <li>38. Сохранение данных в LocalStorage.</li>
+            <li>39. Создание простого блога с использованием API.</li>
+            <li>40. Практика: создание приложения для заметок.</li>
+        </ul>
+    </div>
+
+    <div class="lesson">
+        <h2>41-50 уроки: Фреймворки и библиотеки</h2>
+        <ul>
+            <li>41. Введение в библиотеки и фреймворки.</li>
+            <li>42. Знакомство с jQuery: основные функции.</li>
+            <li>43. Манипуляция DOM с jQuery.</li>
+            <li>44. Введение в React: основные концепции.</li>
+            <li>45. Создание компонентов в React.</li>
+            <li>46. Управление состоянием в React (useState).</li>
+            <li>47. Обработка событий в React.</li>
+            <li>48. Знакомство с Vue.js: основные концепции.</li>
+            <li>49. Создание компонентов в Vue.js.</li>
+            <li>50. Практика: создание простого приложения на React или Vue.js.</li>
+        </ul>
+    </div>
+
+    <div class="lesson">
+        <h2>51-60 уроки: Оптимизация, безопасность и проект</h2>
+        <ul>
+            <li>51. Основы UX/UI: принципы дизайна.</li>
+            <li>52. Оптимизация производительности JavaScript.</li>
+            <li>53. Минификация и сборка проектов (например, Webpack).</li>
+            <li>54. Основы безопасности: XSS и CSRF.</li>
+            <li>55. Защита данных в веб-приложениях.</li>
+            <li>56. Знакомство с системами контроля версий (например, Git).</li>
+            <li>57. Работа с проектами: планирование и организация.</li>
+            <li>58. Презентация проектов: как представить свою работу.</li>
+            <li>59. Финальный проект: создание собственного веб-приложения.</li>
+            <li>60. Обсуждение и анализ финальных проектов.</li>
+        </ul>
+    </div>
 
 </body>
 </html>
