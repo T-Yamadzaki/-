@@ -25,23 +25,31 @@ document.getElementById("support")?.addEventListener("click", () => {
     alert("Свяжитесь с нами: support@example.com");
 });
 
+// Определяем текущую страницу из body
 const currentPage = document.body.dataset.page;
 
+// Функция для обновления активной кнопки
+function setActiveButton(page) {
+  document.querySelectorAll(".nav-btn").forEach(btn => {
+    btn.classList.remove("active"); // убираем со всех
+    if (btn.dataset.page === page) {
+      btn.classList.add("active"); // ставим активной нужную
+    }
+  });
+}
+
+// Сразу при загрузке ставим активную кнопку
+setActiveButton(currentPage);
+
+// Обработчик кликов (на будущее)
 document.querySelectorAll(".nav-btn").forEach(btn => {
-  const page = btn.dataset.page;
-
-  // сбрасываем активность
-  btn.classList.remove("active");
-
-  // если совпадает — делаем активной
-  if (page === currentPage) {
-    btn.classList.add("active");
-  }
-
-  // обработчик клика (на будущее)
   btn.addEventListener("click", () => {
+    const page = btn.dataset.page;
+    setActiveButton(page);
     console.log("Переход:", page);
+    // Здесь можно добавить переход на другую страницу
   });
 });
+
 
 
