@@ -24,3 +24,19 @@ document.getElementById("profile")?.addEventListener("click", () => {
 document.getElementById("support")?.addEventListener("click", () => {
     alert("Свяжитесь с нами: support@example.com");
 });
+
+document.querySelectorAll(".nav-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+
+    document.querySelectorAll(".nav-btn")
+      .forEach(b => b.classList.remove("active"));
+
+    btn.classList.add("active");
+
+    const page = btn.dataset.page;
+
+    // пока просто лог, потом сделаем навигацию
+    console.log("Переход:", page);
+  });
+});
+
