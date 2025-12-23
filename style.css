@@ -37,6 +37,8 @@ body {
   justify-content: flex-start;
   padding-top: 20px; /* Отступ от верхней границы Web App */
   margin-bottom: 30px;
+    position: relative;
+  left: 3px;
 }
 
 h1 {
@@ -44,8 +46,7 @@ h1 {
   color: #e0e0ff; /* светло-фиолетовый */
   text-shadow: 0 0 10px rgba(224,224,255,0.8);
   margin-bottom: 5px;
- position: relative;
-  left: 3px;
+
 }
 
 p.subtitle {
