@@ -134,10 +134,10 @@ footer {
 
 /* Активная */
 .nav-btn.active {
-  color: #ffffff;
-  transform: translateY(-3px);
-  text-shadow: 0 0 10px rgba(180,180,255,0.8);
+  color: #f5c77a;
+  transform: scale(1.1);
 }
+
 
 /* Hover */
 .nav-btn:hover {
