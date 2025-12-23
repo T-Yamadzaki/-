@@ -100,6 +100,57 @@ footer {
 }
 
 /* ==========================================
+   Bottom Navigation
+   ========================================== */
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 64px;
+
+  background: rgba(13, 27, 42, 0.95);
+  backdrop-filter: blur(10px);
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  border-top: 1px solid rgba(255,255,255,0.1);
+  z-index: 1000;
+}
+
+/* Кнопки */
+.nav-btn {
+  background: none;
+  border: none;
+  color: #9fa8da;
+  font-size: 1.6rem;
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+/* Активная */
+.nav-btn.active {
+  color: #ffffff;
+  transform: translateY(-3px);
+  text-shadow: 0 0 10px rgba(180,180,255,0.8);
+}
+
+/* Hover */
+.nav-btn:hover {
+  color: #ffffff;
+}
+
+/* Чтобы контент не прятался под меню */
+body {
+  padding-bottom: 80px;
+}
+
+
+/* ==========================================
    Адаптивность
    ========================================== */
 @media (max-width: 500px) {
