@@ -25,18 +25,23 @@ document.getElementById("support")?.addEventListener("click", () => {
     alert("Свяжитесь с нами: support@example.com");
 });
 
+const currentPage = document.body.dataset.page;
+
 document.querySelectorAll(".nav-btn").forEach(btn => {
-  btn.addEventListener("click", () => {
+  const page = btn.dataset.page;
 
-    document.querySelectorAll(".nav-btn")
-      .forEach(b => b.classList.remove("active"));
+  // сбрасываем активность
+  btn.classList.remove("active");
 
+  // если совпадает — делаем активной
+  if (page === currentPage) {
     btn.classList.add("active");
+  }
 
-    const page = btn.dataset.page;
-
-    // пока просто лог, потом сделаем навигацию
+  // обработчик клика (на будущее)
+  btn.addEventListener("click", () => {
     console.log("Переход:", page);
   });
 });
+
 
