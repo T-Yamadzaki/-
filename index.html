@@ -1,85 +1,157 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AstroBot</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AstroBot</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body data-page="home">
-  <br>
-  <div class="header-wrapper">
-    <h1 style="margin-right:4px;">🌟 AstroBot 🌟</h1>
-    <br>
-    <main class="main-content">
-
-  <!-- HERO -->
-  <section class="hero">
-    <h2>Персональная астрология</h2>
-    <p>
-      Индивидуальные прогнозы, совместимость и разборы<br>
-      на основе твоих данных
-    </p>
-  </section>
-
-  <!-- QUICK ACTIONS -->
-  <section class="quick-actions">
-    <div class="action-card">
-      <div class="icon">🔮</div>
-      <div class="text">
-        <h3>Личный гороскоп</h3>
-        <p>На сегодня, неделю или месяц</p>
+  <div class="app">
+    <header class="hero">
+      <div class="hero-top">
+        <div class="brand">
+          <span class="brand-icon">✨</span>
+          <div>
+            <h1>AstroBot</h1>
+            <p class="brand-tagline">Ваш личный астролог на связи 24/7</p>
+          </div>
+        </div>
+        <div class="availability">
+          <span class="status-dot"></span>
+          <span>Сейчас онлайн</span>
+        </div>
       </div>
-    </div>
 
-    <div class="action-card">
-      <div class="icon">❤️</div>
-      <div class="text">
-        <h3>Совместимость</h3>
-        <p>Любовь, дружба, бизнес</p>
+      <div class="hero-content">
+        <div class="hero-copy">
+          <h2>Живое сопровождение и поддержка в каждом прогнозе</h2>
+          <p>
+            Мы не просто отправляем прогнозы — мы рядом, чтобы объяснить, поддержать и
+            подсказать, как действовать дальше.
+          </p>
+          <div class="hero-actions">
+            <button class="primary-btn">Начать диалог</button>
+            <button class="ghost-btn">Задать вопрос</button>
+          </div>
+          <div class="trust-badges">
+            <div class="badge">
+              <span>🤝</span>
+              <div>
+                <strong>7 800+</strong>
+                <small>счастливых клиентов</small>
+              </div>
+            </div>
+            <div class="badge">
+              <span>💬</span>
+              <div>
+                <strong>Ответ за 5 минут</strong>
+                <small>в чате поддержки</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mentor-card">
+          <div class="mentor-header">
+            <div class="avatar">А</div>
+            <div>
+              <h3>Алина, ваш астролог</h3>
+              <p>Наставник по жизненным решениям</p>
+            </div>
+          </div>
+          <div class="mentor-message">
+            <p>«Я помогу разобраться в чувствах, карьере и отношениях. Напишите, и мы найдём опору вместе.»</p>
+          </div>
+          <div class="mentor-footer">
+            <div>
+              <span class="rating">4.9</span>
+              <small>рейтинг доверия</small>
+            </div>
+            <button class="secondary-btn">Написать</button>
+          </div>
+        </div>
       </div>
-    </div>
+    </header>
 
-    <div class="action-card">
-      <div class="icon">🌌</div>
-      <div class="text">
-        <h3>Прогнозы</h3>
-        <p>Ключевые периоды и события</p>
+    <section class="section">
+      <h2>Сервисы, которые заботятся о вас</h2>
+      <div class="cards">
+        <article class="action-card">
+          <div class="card-icon">🔮</div>
+          <div>
+            <h3>Личный гороскоп</h3>
+            <p>Индивидуальные прогнозы с рекомендациями и мягкой поддержкой.</p>
+          </div>
+          <button class="card-btn">Получить</button>
+        </article>
+
+        <article class="action-card">
+          <div class="card-icon">❤️</div>
+          <div>
+            <h3>Совместимость</h3>
+            <p>Подробный разбор отношений и советы, как стать ближе.</p>
+          </div>
+          <button class="card-btn">Проверить</button>
+        </article>
+
+        <article class="action-card">
+          <div class="card-icon">🌌</div>
+          <div>
+            <h3>Ключевые периоды</h3>
+            <p>Планы на месяц и год с подсказками для важных решений.</p>
+          </div>
+          <button class="card-btn">Открыть</button>
+        </article>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- PREMIUM -->
-  <section class="premium-block">
-    <h3>⭐ Премиум-доступ</h3>
-    <p>
-      Ежедневные прогнозы<br>
-      Эксклюзивные разборы<br>
-      Доступ к истории
-    </p>
-    <button class="premium-btn">Открыть Премиум</button>
-  </section>
+    <section class="support">
+      <div class="support-card">
+        <h2>Всегда рядом, когда нужна опора</h2>
+        <p>
+          Мы остаёмся с вами после прогноза: отвечаем на вопросы, напоминаем о важных
+          событиях и поддерживаем, когда хочется уверенности.
+        </p>
+        <div class="support-actions">
+          <button class="primary-btn">Открыть чат</button>
+          <button class="ghost-btn">Получить напоминание</button>
+        </div>
+      </div>
+      <div class="support-list">
+        <div>
+          <h4>Личный подход</h4>
+          <p>Мы учитываем ваш характер и жизненный контекст.</p>
+        </div>
+        <div>
+          <h4>Человеческий тон</h4>
+          <p>Доброжелательное общение без шаблонных фраз.</p>
+        </div>
+        <div>
+          <h4>Контроль качества</h4>
+          <p>Каждый прогноз проходит проверку экспертом.</p>
+        </div>
+      </div>
+    </section>
 
-</main>
+    <section class="premium">
+      <div>
+        <span class="premium-badge">Премиум</span>
+        <h2>Глубокое сопровождение на каждый день</h2>
+        <p>Ежедневные прогнозы, медитации, история запросов и приоритетная линия поддержки.</p>
+      </div>
+      <button class="primary-btn">Открыть Премиум</button>
+    </section>
+  </div>
 
   <nav class="bottom-nav">
- <button class="nav-btn" data-page="home">🏠</button>
-
-  <button class="nav-btn" data-page="services">
-    🔮
-  </button>
-  <button class="nav-btn" data-page="premium">
-    ⭐
-  </button>
-  <button class="nav-btn" data-page="profile">
-    👤
-  </button>
-</nav>
-
+    <button class="nav-btn" data-page="home">🏠</button>
+    <button class="nav-btn" data-page="services">🔮</button>
+    <button class="nav-btn" data-page="premium">⭐</button>
+    <button class="nav-btn" data-page="profile">👤</button>
+  </nav>
 
   <footer>© 2025 AstroBot. Все права защищены.</footer>
 
   <script src="main.js"></script>
 </body>
-
 </html>
