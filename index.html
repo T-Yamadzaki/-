@@ -3,88 +3,718 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AstroBot</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Avinor: Build Your Network</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            dark: '#0B0B0B',
+            card: '#1A1A1A',
+            border: '#2D2D2D',
+            neonBlue: '#0099FF',
+            neonPurple: '#7C3AED',
+            neonGreen: '#10B981',
+            neonOrange: '#F59E0B',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #0B0B0B;
+      font-family: 'Inter', sans-serif;
+    }
+    .glow-blue { box-shadow: 0 0 20px rgba(0, 153, 255, 0.4); }
+    .glow-purple { box-shadow: 0 0 20px rgba(124, 58, 237, 0.4); }
+    .glow-green { box-shadow: 0 0 20px rgba(16, 185, 129, 0.4); }
+    .glow-orange { box-shadow: 0 0 20px rgba(245, 158, 11, 0.4); }
+    .glow-text-blue { text-shadow: 0 0 10px rgba(0, 153, 255, 0.8); }
+    .glow-text-purple { text-shadow: 0 0 10px rgba(124, 58, 237, 0.8); }
+    
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-3px) scale(1.02);
+    }
+    
+    .btn-glow {
+      transition: all 0.3s ease;
+    }
+    .btn-glow:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.2);
+    }
+    .btn-glow:active {
+      transform: scale(0.98);
+    }
+    
+    .fade-in {
+      animation: fadeIn 0.3s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .module-shower { background: linear-gradient(145deg, #1e3a5f, #0f2744); border: 2px solid #0099FF; }
+    .module-lounge { background: linear-gradient(145deg, #2d1b5e, #1a1035); border: 2px solid #7C3AED; }
+    .module-coffee { background: linear-gradient(145deg, #1e3a2f, #0f2718); border: 2px solid #10B981; }
+    
+    .staff-card {
+      transition: all 0.3s ease;
+    }
+    .staff-card:hover {
+      box-shadow: 0 0 25px rgba(124, 58, 237, 0.3);
+    }
+    
+    .capsule-card {
+      transition: all 0.2s ease;
+    }
+    .capsule-card:hover {
+      transform: scale(1.05);
+    }
+    
+    .progress-bar {
+      height: 4px;
+      background: #2D2D2D;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #0099FF, #7C3AED);
+      transition: width 0.5s ease;
+    }
+    
+    .nav-btn {
+      transition: all 0.3s ease;
+    }
+    .nav-btn:hover {
+      transform: translateY(-2px);
+    }
+    .nav-btn.active {
+      background: linear-gradient(135deg, #0099FF, #7C3AED);
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+    .pulse { animation: pulse 2s ease-in-out infinite; }
+    
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+    .shimmer {
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+      background-size: 200% 100%;
+    }
+  </style>
 </head>
-<body data-page="home">
-  <div class="app">
-    <header class="hero">
-      <div class="brand">
-        <span class="brand-icon">✨</span>
-        <h1>AstroBot</h1>
-      </div>
-      <p class="subtitle">Персональная астрология, которая помогает принимать решения каждый день.</p>
-      <div class="hero-actions">
-        <button class="primary-btn">Получить прогноз</button>
-        <button class="ghost-btn">Подобрать консультацию</button>
-      </div>
-      <div class="hero-stats">
-        <div class="stat-card">
-          <span>98%</span>
-          <p>точность прогнозов</p>
-        </div>
-        <div class="stat-card">
-          <span>24/7</span>
-          <p>поддержка</p>
-        </div>
-        <div class="stat-card">
-          <span>5 мин</span>
-          <p>до первого ответа</p>
-        </div>
+<body class="min-h-screen text-white pb-20">
+  <div id="app" class="min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="p-4 border-b border-border flex justify-between items-center sticky top-0 bg-dark z-50">
+      <h1 class="text-2xl font-bold cursor-pointer" onclick="showScreen('network')">
+        <span class="text-neonBlue glow-text-blue">A</span><span class="text-neonPurple">vinor</span>
+      </h1>
+      <div class="flex items-center gap-3">
+        <button onclick="toggleProfile()" class="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition">
+          <span class="w-8 h-8 bg-gradient-to-r from-neonBlue to-neonPurple rounded-full flex items-center justify-center">👤</span>
+        </button>
       </div>
     </header>
 
-    <section class="section">
-      <h2>Выберите сервис</h2>
-      <div class="cards">
-        <article class="action-card">
-          <div class="card-icon">🔮</div>
-          <div>
-            <h3>Личный гороскоп</h3>
-            <p>На сегодня, неделю или месяц, с акцентом на ваши цели.</p>
+    <!-- Profile Panel -->
+    <div id="profile-panel" class="hidden bg-card border-b border-border p-4 fade-in">
+      <div class="flex justify-between items-start mb-4">
+        <div>
+          <div class="flex items-center gap-2">
+            <span id="user-name" class="text-lg font-semibold">Игрок</span>
+            <span class="text-xs bg-neonBlue/20 text-neonBlue px-2 py-0.5 rounded">Уровень <span id="user-level">1</span></span>
           </div>
-          <button class="card-btn">Открыть</button>
-        </article>
-
-        <article class="action-card">
-          <div class="card-icon">❤️</div>
-          <div>
-            <h3>Совместимость</h3>
-            <p>Любовь, дружба, бизнес — узнайте сильные стороны союза.</p>
-          </div>
-          <button class="card-btn">Проверить</button>
-        </article>
-
-        <article class="action-card">
-          <div class="card-icon">🌌</div>
-          <div>
-            <h3>Ключевые периоды</h3>
-            <p>События, которые повлияют на карьеру и отношения.</p>
-          </div>
-          <button class="card-btn">Смотреть</button>
-        </article>
+        </div>
+        <button onclick="hideProfile()" class="text-gray-400 hover:text-white">✕</button>
       </div>
-    </section>
-
-    <section class="premium">
-      <div>
-        <span class="premium-badge">Премиум</span>
-        <h2>Откройте безлимитный доступ</h2>
-        <p>Ежедневные прогнозы, медитации, история запросов и приоритетная поддержка.</p>
+      <div class="grid grid-cols-3 gap-3">
+        <div class="text-center p-3 bg-dark rounded-lg border border-border card-hover">
+          <div class="text-sm font-bold text-neonBlue">AviCoin</div>
+          <div id="avicoin-display" class="text-xl font-bold text-neonBlue glow-text-blue">0</div>
+          <div class="text-xs text-gray-500 mt-1">для проживания</div>
+        </div>
+        <div class="text-center p-3 bg-dark rounded-lg border border-border card-hover">
+          <div class="text-sm font-bold text-yellow-400">Gold</div>
+          <div id="gold-display" class="text-xl font-bold text-yellow-400">0</div>
+          <div class="text-xs text-gray-500 mt-1">ускорение</div>
+        </div>
+        <div class="text-center p-3 bg-dark rounded-lg border border-border card-hover">
+          <div class="text-sm font-bold text-gray-300">Silver</div>
+          <div id="silver-display" class="text-xl font-bold text-gray-300">0</div>
+          <div class="text-xs text-gray-500 mt-1">строительство</div>
+        </div>
       </div>
-      <button class="primary-btn">Открыть Премиум</button>
-    </section>
+      <div class="flex gap-2 mt-4">
+        <button onclick="getBonus()" class="flex-1 py-2.5 bg-gradient-to-r from-neonBlue to-neonPurple rounded-lg font-medium btn-glow">
+          + Получить валюты
+        </button>
+        <button onclick="useGold()" class="flex-1 py-2.5 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-lg font-medium btn-glow disabled:opacity-50" id="use-gold-btn" disabled>
+          Gold → Silver
+        </button>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-4">
+      <!-- Network Screen -->
+      <div id="screen-network" class="screen fade-in">
+        <h2 class="text-xl font-semibold mb-4">Моя сеть отелей</h2>
+        <div id="cities-list" class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
+        </div>
+        <button onclick="showScreen('create-city')" class="w-full py-4 border-2 border-dashed border-neonBlue/50 text-neonBlue rounded-xl hover:border-neonBlue hover:glow-blue transition btn-glow">
+          + Открыть новый город
+        </button>
+      </div>
+
+      <!-- Create City Screen -->
+      <div id="screen-create-city" class="screen hidden fade-in">
+        <button onclick="showScreen('network')" class="text-neonBlue mb-4 hover:underline">← Назад</button>
+        <h2 class="text-xl font-semibold mb-6">Создать отель</h2>
+        <div class="space-y-4">
+          <div>
+            <label class="block text-sm text-gray-400 mb-2">Название города</label>
+            <input type="text" id="city-name" placeholder="Москва" class="w-full p-4 bg-card border border-border rounded-xl focus:border-neonBlue focus:outline-none transition">
+          </div>
+          <div>
+            <label class="block text-sm text-gray-400 mb-2">Название отеля</label>
+            <input type="text" id="hotel-name" placeholder="Avinor Central" class="w-full p-4 bg-card border border-border rounded-xl focus:border-neonBlue focus:outline-none transition">
+          </div>
+          <div class="flex gap-3 pt-2">
+            <button onclick="showScreen('network')" class="flex-1 py-4 border border-border rounded-xl hover:border-gray-500 transition btn-glow">
+              Отмена
+            </button>
+            <button onclick="createHotel()" class="flex-1 py-4 bg-gradient-to-r from-neonBlue to-neonPurple rounded-xl font-semibold btn-glow">
+              Создать отель
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hotel Screen -->
+      <div id="screen-hotel" class="screen hidden fade-in">
+        <button onclick="showScreen('network')" class="text-neonBlue mb-3 hover:underline btn-glow">← Назад к сети</button>
+        <h2 id="hotel-title" class="text-2xl font-bold mb-1"></h2>
+        <p id="hotel-city" class="text-gray-400 text-sm mb-4"></p>
+        
+        <!-- Stats Panel -->
+        <div class="grid grid-cols-3 gap-2 mb-6">
+          <div class="text-center p-4 bg-card rounded-xl border border-border card-hover">
+            <div class="text-xs text-gray-400">Доход</div>
+            <div id="income-display" class="text-lg font-bold text-neonBlue">0/сек</div>
+          </div>
+          <div class="text-center p-4 bg-card rounded-xl border border-border card-hover">
+            <div class="text-xs text-gray-400">Рейтинг</div>
+            <div id="rating-display" class="text-lg">⭐⭐⭐</div>
+          </div>
+          <div class="text-center p-4 bg-card rounded-xl border border-border card-hover">
+            <div class="text-xs text-gray-400">Капсул</div>
+            <div id="capsules-display" class="text-lg font-bold text-neonPurple">0</div>
+          </div>
+        </div>
+
+        <!-- Modules Section -->
+        <div class="mb-6">
+          <h3 class="text-lg font-semibold mb-3">Комнаты и зоны</h3>
+          <div id="modules-grid" class="grid grid-cols-1 md:grid-cols-3 gap-3">
+          </div>
+        </div>
+
+        <!-- Capsules Section -->
+        <div class="mb-6">
+          <div class="flex justify-between items-center mb-3">
+            <h3 class="text-lg font-semibold">Капсулы</h3>
+            <button onclick="addCapsule()" id="btn-add-capsule" class="px-4 py-2 bg-neonBlue/20 text-neonBlue rounded-lg hover:bg-neonBlue/30 transition text-sm disabled:opacity-50" disabled>
+              + Добавить (50 Silver)
+            </button>
+          </div>
+          <div id="capsule-grid" class="grid grid-cols-3 md:grid-cols-4 gap-3">
+          </div>
+        </div>
+
+        <!-- Staff Section -->
+        <div class="mb-6">
+          <div class="flex justify-between items-center mb-3">
+            <h3 class="text-lg font-semibold">Сотрудники</h3>
+          </div>
+          <div id="staff-grid" class="grid grid-cols-1 md:grid-cols-3 gap-3">
+          </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="grid grid-cols-2 gap-3">
+          <button onclick="upgradeSelected()" id="btn-upgrade" class="py-4 bg-card border border-neonPurple/50 text-neonPurple rounded-xl hover:border-neonPurple hover:glow-purple transition btn-glow disabled:opacity-50" disabled>
+            Улучшить
+            <span class="block text-xs text-gray-400">(100 Silver)</span>
+          </button>
+          <button onclick="speedUp()" id="btn-speed" class="py-4 bg-card border border-yellow-500/50 text-yellow-400 rounded-xl hover:border-yellow-400 hover:glow-orange transition btn-glow disabled:opacity-50" disabled>
+            Ускорить x2
+            <span class="block text-xs text-gray-400">(10 Gold)</span>
+          </button>
+          <button onclick="collectIncome()" class="col-span-2 py-4 bg-gradient-to-r from-neonBlue to-neonPurple rounded-xl font-semibold btn-glow">
+            Собрать доход (+<span id="pending-display">0</span> Silver)
+          </button>
+        </div>
+      </div>
+
+      <!-- Referral Screen -->
+      <div id="screen-referral" class="screen hidden fade-in">
+        <h2 class="text-xl font-semibold mb-6">Реферальная программа</h2>
+        <div class="bg-card border border-border rounded-xl p-5 mb-4">
+          <div class="text-sm text-gray-400 mb-2">Ваша ссылка:</div>
+          <div class="flex gap-2">
+            <input type="text" value="https://avinor.io/r/player123" readonly class="flex-1 p-3 bg-dark border border-border rounded-lg text-neonBlue">
+            <button onclick="copyRefLink()" class="px-4 bg-neonBlue/20 text-neonBlue rounded-lg hover:bg-neonBlue/30 transition btn-glow">Копировать</button>
+          </div>
+        </div>
+        <div class="bg-card border border-border rounded-xl p-5 mb-4">
+          <div class="text-sm text-gray-400 mb-2">Приглашено:</div>
+          <div class="text-4xl font-bold text-neonBlue glow-text-blue"><span id="referrals-count">0</span></div>
+          <div class="text-gray-400">человек</div>
+        </div>
+        <div class="bg-gradient-to-r from-neonBlue/10 to-neonPurple/10 border border-neonBlue/30 rounded-xl p-5 mb-4">
+          <div class="text-lg font-semibold text-neonBlue mb-1">+10 Gold за каждого приглашённого</div>
+          <div class="text-sm text-gray-400">Пригласите друзей и получайте Gold для ускорения</div>
+        </div>
+        <div class="text-center">
+          <button onclick="addReferral()" class="px-8 py-3 bg-neonPurple/20 text-neonPurple rounded-xl hover:bg-neonPurple/30 transition btn-glow">
+            + Симулировать приглашение
+          </button>
+        </div>
+      </div>
+
+      <!-- Roadmap Screen -->
+      <div id="screen-roadmap" class="screen hidden fade-in">
+        <h2 class="text-xl font-semibold mb-6">Дорожная карта проекта</h2>
+        <div class="space-y-4">
+          <div class="bg-card border border-neonBlue/30 rounded-xl p-4 card-hover">
+            <div class="flex items-center gap-3">
+              <span class="text-3xl">✅</span>
+              <div class="flex-1">
+                <div class="font-semibold text-lg">Этап 1: Запуск платформы</div>
+                <div class="text-sm text-gray-400">Базовая инфраструктура готова</div>
+              </div>
+              <span class="text-green-400 font-bold">100%</span>
+            </div>
+            <div class="progress-bar mt-3">
+              <div class="progress-fill" style="width: 100%"></div>
+            </div>
+          </div>
+          <div class="bg-card border border-yellow-500/30 rounded-xl p-4 card-hover">
+            <div class="flex items-center gap-3">
+              <span class="text-3xl">🚧</span>
+              <div class="flex-1">
+                <div class="font-semibold text-lg">Этап 2: Сбор средств</div>
+                <div class="text-sm text-gray-400">Инвесторы и партнёры</div>
+              </div>
+              <span class="text-yellow-400 font-bold">65%</span>
+            </div>
+            <div class="progress-bar mt-3">
+              <div class="progress-fill" style="width: 65%"></div>
+            </div>
+          </div>
+          <div class="bg-card border border-gray-600/30 rounded-xl p-4 card-hover">
+            <div class="flex items-center gap-3">
+              <span class="text-3xl">🏨</span>
+              <div class="flex-1">
+                <div class="font-semibold text-lg">Этап 3: Первый отель</div>
+                <div class="text-sm text-gray-400">Открытие пилотного отеля</div>
+              </div>
+              <span class="text-gray-400 font-bold">30%</span>
+            </div>
+            <div class="progress-bar mt-3">
+              <div class="progress-fill" style="width: 30%"></div>
+            </div>
+          </div>
+          <div class="bg-card border border-gray-600/30 rounded-xl p-4 card-hover">
+            <div class="flex items-center gap-3">
+              <span class="text-3xl">🌍</span>
+              <div class="flex-1">
+                <div class="font-semibold text-lg">Этап 4: Расширение сети</div>
+                <div class="text-sm text-gray-400">Сеть по городам России</div>
+              </div>
+              <span class="text-gray-400 font-bold">10%</span>
+            </div>
+            <div class="progress-bar mt-3">
+              <div class="progress-fill" style="width: 10%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-card/95 backdrop-blur border-t border-border p-2 flex justify-around z-50">
+      <button onclick="showScreen('network')" class="nav-btn p-2 rounded-xl text-gray-400 hover:text-white" data-screen="network">
+        <span class="block text-xl">🏠</span>
+        <span class="text-xs">Сеть</span>
+      </button>
+      <button onclick="showScreen('referral')" class="nav-btn p-2 rounded-xl text-gray-400 hover:text-white" data-screen="referral">
+        <span class="block text-xl">👥</span>
+        <span class="text-xs">Рефералы</span>
+      </button>
+      <button onclick="showScreen('roadmap')" class="nav-btn p-2 rounded-xl text-gray-400 hover:text-white" data-screen="roadmap">
+        <span class="block text-xl">🗺</span>
+        <span class="text-xs">Roadmap</span>
+      </button>
+    </nav>
   </div>
 
-  <nav class="bottom-nav">
-    <button class="nav-btn" data-page="home">🏠</button>
-    <button class="nav-btn" data-page="services">🔮</button>
-    <button class="nav-btn" data-page="premium">⭐</button>
-    <button class="nav-btn" data-page="profile">👤</button>
-  </nav>
+  <script>
+    let state = {
+      user: { name: 'Игрок', level: 1, aviCoin: 100, gold: 50, silver: 0 },
+      cities: [
+        { id: 1, name: 'Москва', hotelName: 'Avinor Central', level: 3, capsules: [1,1,1,0,1,1,0,0,1,0,0,0,0,0,0,0], income: 0.5, speedMultiplier: 1,
+          modules: { shower: 1, lounge: 0, coffee: 0 },
+          staff: { admin: 0, cleaner: 0, manager: 0 }
+        },
+        { id: 2, name: 'Казань', hotelName: 'Avinor Kazan', level: 1, capsules: [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], income: 0.2, speedMultiplier: 1,
+          modules: { shower: 0, lounge: 0, coffee: 0 },
+          staff: { admin: 0, cleaner: 0, manager: 0 }
+        }
+      ],
+      referrals: 0,
+      currentCityId: null,
+      selectedCapsuleIndex: null,
+      pendingSilver: 0
+    };
 
-  <footer>© 2025 AstroBot. Все права защищены.</footer>
+    const moduleConfig = {
+      shower: { name: '🚿 Душ', baseCost: 200, costMult: 1.5, bonus: 10, color: 'neonBlue' },
+      lounge: { name: '🛋 Лаунж зона', baseCost: 300, costMult: 1.5, bonus: 15, color: 'neonPurple' },
+      coffee: { name: '☕ Кофе зона', baseCost: 150, costMult: 1.5, bonus: 8, color: 'neonGreen' }
+    };
 
-  <script src="main.js"></script>
+    const staffConfig = {
+      admin: { name: '👔 Администратор', role: 'income', bonus: 10, baseCost: 500, costMult: 1.8 },
+      cleaner: { name: '🧹 Уборщик', role: 'rating', bonus: 5, baseCost: 300, costMult: 1.5 },
+      manager: { name: '💼 Менеджер', role: 'boost', bonus: 20, baseCost: 800, costMult: 2 }
+    };
+
+    function init() {
+      updateUI();
+      startIncomeGeneration();
+    }
+
+    function showScreen(screenName) {
+      document.querySelectorAll('.screen').forEach(s => s.classList.add('hidden'));
+      document.getElementById('screen-' + screenName).classList.remove('hidden');
+      if (screenName === 'network') renderCities();
+      else if (screenName === 'hotel') renderHotel();
+      document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+      const navBtn = document.querySelector(`[data-screen="${screenName}"]`);
+      if (navBtn) navBtn.classList.add('active');
+    }
+
+    function toggleProfile() {
+      document.getElementById('profile-panel').classList.toggle('hidden');
+    }
+    function hideProfile() { document.getElementById('profile-panel').classList.add('hidden'); }
+
+    function renderCities() {
+      const list = document.getElementById('cities-list');
+      list.innerHTML = state.cities.map(city => `
+        <div onclick="openHotel(${city.id})" class="bg-card border border-border rounded-xl p-5 cursor-pointer hover:border-neonBlue hover:glow-blue transition card-hover">
+          <div class="flex justify-between items-center">
+            <div>
+              <div class="font-bold text-lg">${city.hotelName}</div>
+              <div class="text-sm text-gray-400">${city.name}</div>
+              <div class="text-xs text-gray-500 mt-2">${city.capsules.filter(c => c > 0).length}/16 капсул</div>
+            </div>
+            <div class="text-right">
+              <div class="text-neonBlue font-bold text-xl">Ур. ${Math.floor(city.level)}</div>
+              <div class="text-xs text-gray-400">${(city.income * city.speedMultiplier).toFixed(1)}/сек</div>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function openHotel(cityId) {
+      state.currentCityId = cityId;
+      state.selectedCapsuleIndex = null;
+      showScreen('hotel');
+    }
+
+    function renderHotel() {
+      const city = state.cities.find(c => c.id === state.currentCityId);
+      if (!city) return;
+      const incomeMult = 1 + (city.modules.shower * 0.1) + (city.modules.lounge * 0.15) + (city.modules.coffee * 0.08) + (city.staff.admin * 0.1) + (city.staff.manager * 0.2);
+      const finalIncome = city.income * city.speedMultiplier * incomeMult;
+      
+      document.getElementById('hotel-title').textContent = city.hotelName;
+      document.getElementById('hotel-city').textContent = city.name + ' • Уровень ' + Math.floor(city.level);
+      document.getElementById('income-display').textContent = finalIncome.toFixed(1) + '/сек';
+      document.getElementById('rating-display').textContent = '⭐'.repeat(Math.min(Math.floor(city.level) + city.staff.cleaner, 5));
+      document.getElementById('capsules-display').textContent = city.capsules.filter(c => c > 0).length;
+      document.getElementById('pending-display').textContent = Math.floor(state.pendingSilver);
+
+      renderModules();
+      renderCapsuleGrid();
+      renderStaff();
+      updateActionButtons();
+    }
+
+    function renderModules() {
+      const city = state.cities.find(c => c.id === state.currentCityId);
+      const grid = document.getElementById('modules-grid');
+      grid.innerHTML = Object.entries(moduleConfig).map(([key, config]) => {
+        const level = city.modules[key];
+        const cost = Math.floor(config.baseCost * Math.pow(config.costMult, level));
+        const bonus = level * config.bonus;
+        const isMax = level >= 5;
+        return `
+          <div class="module-${key} rounded-xl p-4 card-hover">
+            <div class="flex justify-between items-start mb-2">
+              <span class="font-semibold">${config.name}</span>
+              <span class="text-xs bg-black/30 px-2 py-1 rounded">Ур. ${level}</span>
+            </div>
+            <div class="text-sm mb-3">${level > 0 ? `+${bonus}% доход` : 'Не построено'}</div>
+            ${!isMax ? `<button onclick="upgradeModule('${key}')" class="w-full py-2 bg-black/30 rounded-lg hover:bg-black/50 transition text-sm" ${state.user.silver < cost ? 'disabled class="opacity-50"' : ''}>
+              Улучшить (${cost} Silver)
+            </button>` : '<div class="text-center text-sm text-gray-400">Макс. уровень</div>'}
+          </div>
+        `;
+      }).join('');
+    }
+
+    function upgradeModule(key) {
+      const city = state.cities.find(c => c.id === state.currentCityId);
+      const config = moduleConfig[key];
+      const cost = Math.floor(config.baseCost * Math.pow(config.costMult, city.modules[key]));
+      if (state.user.silver >= cost && city.modules[key] < 5) {
+        state.user.silver -= cost;
+        city.modules[key]++;
+        city.income += config.bonus / 100;
+        renderHotel();
+        updateUI();
+      }
+    }
+
+    function renderCapsuleGrid() {
+      const city = state.cities.find(c => c.id === state.currentCityId);
+      const grid = document.getElementById('capsule-grid');
+      grid.innerHTML = city.capsules.map((capsule, index) => {
+        let bgClass = 'bg-card border border-dashed border-border';
+        let content = '<span class="text-gray-500 text-xs">Пусто</span>';
+        if (capsule === 1) {
+          bgClass = 'bg-gradient-to-br from-neonBlue/20 to-neonBlue/5 border-2 border-neonBlue cursor-pointer capsule-card';
+          content = '<div class="text-center"><div class="text-xs text-neonBlue font-semibold">Капсула</div><div class="text-xs text-gray-400">+0.1/сек</div></div>';
+        } else if (capsule >= 2) {
+          bgClass = 'bg-gradient-to-br from-neonPurple/20 to-neonPurple/5 border-2 border-neonPurple cursor-pointer capsule-card';
+          content = '<div class="text-center"><div class="text-xs text-neonPurple font-semibold">VIP Капсула</div><div class="text-xs text-gray-400">+0.3/сек</div></div>';
+        }
+        const selected = state.selectedCapsuleIndex === index ? 'ring-4 ring-white/50' : '';
+        return `<div onclick="selectCapsule(${index})" class="${bgClass} rounded-xl p-3 min-h-[80px] flex items-center justify-center ${selected}">${content}</div>`;
+      }).join('');
+    }
+
+    function selectCapsule(index) {
+      const city = state.cities.find(c => c.id === state.currentCityId);
+      if (!city || city.capsules[index] === 0) {
+        state.selectedCapsuleIndex = null;
+      } else {
+        state.selectedCapsuleIndex = index;
+      }
+      renderCapsuleGrid();
+      updateActionButtons();
+    }
+
+    function renderStaff() {
+      const city = state.cities.find(c => c.id === state.currentCityId);
+      const grid = document.getElementById('staff-grid');
+      grid.innerHTML = Object.entries(staffConfig).map(([key, config]) => {
+        const level = city.staff[key];
+        const cost = Math.floor(config.baseCost * Math.pow(config.costMult, level));
+        const bonus = level * config.bonus;
+        const isHired = level > 0;
+        const isMax = level >= 3;
+        return `
+          <div class="bg-card border border-border rounded-xl p-4 staff-card">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-2xl">${config.name.split(' ')[0]}</span>
+              <div>
+                <div class="font-semibold text-sm">${config.name.split(' ').slice(1).join(' ')}</div>
+                <div class="text-xs text-gray-400">${isHired ? `+${bonus}% ${config.role === 'income' ? 'доход' : config.role === 'rating' ? 'рейтинг' : 'буст'}` : 'Не нанят'}</div>
+              </div>
+            </div>
+            ${!isHired ? `<button onclick="hireStaff('${key}')" class="w-full py-2 bg-neonPurple/20 text-neonPurple rounded-lg hover:bg-neonPurple/30 transition text-sm" ${state.user.silver < cost ? 'disabled class="opacity-50"' : ''}>
+              Нанять (${cost} Silver)
+            </button>` : !isMax ? `<button onclick="upgradeStaff('${key}')" class="w-full py-2 bg-neonPurple/20 text-neonPurple rounded-lg hover:bg-neonPurple/30 transition text-sm" ${state.user.silver < cost ? 'disabled class="opacity-50"' : ''}>
+              Улучшить (${cost} Silver)
+            </button>` : '<div class="text-center text-xs text-gray-400">Макс. уровень</div>'}
+          </div>
+        `;
+      }).join('');
+    }
+
+    function hireStaff(key) {
+      const city = state.cities.find(c => c.id === state.currentCityId);
+      const config = staffConfig[key];
+      const cost = Math.floor(config.baseCost * Math.pow(config.costMult, city.staff[key]));
+      if (state.user.silver >= cost) {
+        state.user.silver -= cost;
+        city.staff[key] = 1;
+        if (config.role === 'rating') city.level += 0.2;
+        renderHotel();
+        updateUI();
+      }
+    }
+
+    function upgradeStaff(key) {
+      const city = state.cities.find(c => c.id === state.currentCityId);
+      const config = staffConfig[key];
+      const cost = Math.floor(config.baseCost * Math.pow(config.costMult, city.staff[key]));
+      if (state.user.silver >= cost && city.staff[key] < 3) {
+        state.user.silver -= cost;
+        city.staff[key]++;
+        if (config.role === 'rating') city.level += 0.1;
+        renderHotel();
+        updateUI();
+      }
+    }
+
+    function updateActionButtons() {
+      const city = state.cities.find(c => c.id === state.currentCityId);
+      if (!city) return;
+      const emptySlot = city.capsules.indexOf(0);
+      document.getElementById('btn-add-capsule').disabled = emptySlot === -1 || state.user.silver < 50;
+      document.getElementById('btn-upgrade').disabled = state.selectedCapsuleIndex === null || city.capsules[state.selectedCapsuleIndex] !== 1 || state.user.silver < 100;
+      document.getElementById('btn-speed').disabled = state.user.gold < 10;
+    }
+
+    function addCapsule() {
+      const city = state.cities.find(c => c.id === state.currentCityId);
+      if (!city || state.user.silver < 50) return;
+      const emptySlot = city.capsules.indexOf(0);
+      if (emptySlot !== -1) {
+        state.user.silver -= 50;
+        city.capsules[emptySlot] = 1;
+        city.income += 0.1;
+        renderHotel();
+        updateUI();
+      }
+    }
+
+    function upgradeSelected() {
+      const city = state.cities.find(c => c.id === state.currentCityId);
+      if (!city || state.selectedCapsuleIndex === null || city.capsules[state.selectedCapsuleIndex] !== 1 || state.user.silver < 100) return;
+      state.user.silver -= 100;
+      city.capsules[state.selectedCapsuleIndex] = 2;
+      city.income += 0.2;
+      city.level += 0.1;
+      renderHotel();
+      updateUI();
+    }
+
+    function speedUp() {
+      const city = state.cities.find(c => c.id === state.currentCityId);
+      if (!city || state.user.gold < 10) return;
+      state.user.gold -= 10;
+      city.speedMultiplier = 2;
+      updateUI();
+      updateActionButtons();
+      setTimeout(() => {
+        city.speedMultiplier = 1;
+        renderHotel();
+      }, 10000);
+    }
+
+    function collectIncome() {
+      if (state.pendingSilver > 0) {
+        state.user.silver += Math.floor(state.pendingSilver);
+        state.pendingSilver = 0;
+        renderHotel();
+        updateUI();
+      }
+    }
+
+    function startIncomeGeneration() {
+      setInterval(() => {
+        state.cities.forEach(city => {
+          const capsulesCount = city.capsules.filter(c => c > 0).length;
+          const incomeMult = 1 + (city.modules.shower * 0.1) + (city.modules.lounge * 0.15) + (city.modules.coffee * 0.08) + (city.staff.admin * 0.1) + (city.staff.manager * 0.2);
+          const baseIncome = city.income * city.speedMultiplier * incomeMult;
+          state.pendingSilver += baseIncome * capsulesCount / 10;
+        });
+        if (state.currentCityId && document.getElementById('screen-hotel').classList.contains('hidden') === false) {
+          document.getElementById('pending-display').textContent = Math.floor(state.pendingSilver);
+        }
+      }, 1000);
+    }
+
+    function getBonus() {
+      state.user.aviCoin += 10;
+      state.user.gold += 5;
+      state.user.silver += 50;
+      updateUI();
+    }
+
+    function useGold() {
+      if (state.user.gold > 0) {
+        state.user.gold -= 1;
+        state.user.silver += 100;
+        updateUI();
+      }
+    }
+
+    function createHotel() {
+      const cityName = document.getElementById('city-name').value.trim();
+      const hotelName = document.getElementById('hotel-name').value.trim();
+      if (!cityName || !hotelName) return;
+      state.cities.push({
+        id: Date.now(), name: cityName, hotelName: hotelName, level: 1,
+        capsules: Array(16).fill(0), income: 0.1, speedMultiplier: 1,
+        modules: { shower: 0, lounge: 0, coffee: 0 },
+        staff: { admin: 0, cleaner: 0, manager: 0 }
+      });
+      document.getElementById('city-name').value = '';
+      document.getElementById('hotel-name').value = '';
+      showScreen('network');
+    }
+
+    function copyRefLink() {
+      const input = document.querySelector('#screen-referral input');
+      input.select();
+      document.execCommand('copy');
+    }
+
+    function addReferral() {
+      state.referrals++;
+      state.user.gold += 10;
+      document.getElementById('referrals-count').textContent = state.referrals;
+      updateUI();
+    }
+
+    function updateUI() {
+      document.getElementById('user-name').textContent = state.user.name;
+      document.getElementById('user-level').textContent = state.user.level;
+      document.getElementById('avicoin-display').textContent = state.user.aviCoin;
+      document.getElementById('gold-display').textContent = state.user.gold;
+      document.getElementById('silver-display').textContent = Math.floor(state.user.silver);
+      document.getElementById('referrals-count').textContent = state.referrals;
+      document.getElementById('use-gold-btn').disabled = state.user.gold < 1;
+    }
+
+    init();
+    showScreen('network');
+  </script>
 </body>
 </html>
